@@ -226,6 +226,122 @@ async function sendEmail(toName: string, toEmail: string, html: string): Promise
   return false;
 }
 
+// ===== 发送报告给管理员 =====
+interface SendResult {
+  name: string; email: string; ok: boolean;
+  quoteContent: string; quoteAuthor: string; quoteSource: string;
+  error?: string;
+}
+
+async function sendReport(results: SendResult[], success: number, failed: number): Promise<void> {
+  const label = getTimeLabel();
+  const dateStr = new Date().toLocaleString('zh-CN', {
+    timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit',
+  });
+  const period = label === '08:00' ? '🌅 早间' : '🌇 傍晚';
+
+  const rows = results.map(r => `
+    <tr style="${r.ok ? '' : 'background:#fef2f2'}">
+      <td style="padding:8px 12px;border-bottom:1px solid #eee">${escHtml(r.name)}</td>
+      <td style="padding:8px 12px;border-bottom:1px solid #eee;color:#666;font-size:13px">${escHtml(r.email)}</td>
+      <td style="padding:8px 12px;border-bottom:1px solid #eee;font-size:12px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${escHtml(r.quoteContent)}">${escHtml(trunc(r.quoteContent, 40))}</td>
+      <td style="padding:8px 12px;border-bottom:1px solid #eee;font-size:12px;color:#888">${escHtml(r.quoteSource)}</td>
+      <td style="padding:8px 12px;border-bottom:1px solid #eee;text-align:center">${r.ok ? '<span style="color:#10b981">✅</span>' : '<span style="color:#ef4444">❌</span>'}</td>
+    </tr>`).join('');
+
+  // 语录来源统计
+  const sourceCounts: Record<string, number> = {};
+  for (const r of results) {
+    sourceCounts[r.quoteSource] = (sourceCounts[r.quoteSource] || 0) + 1;
+  }
+  const sourceSummary = Object.entries(sourceCounts)
+    .map(([k, v]) => `${k}: ${v}条`).join(' | ');
+
+  const html = `<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif;background:#f5f7fa;color:#333;line-height:1.6}
+.container{max-width:600px;margin:0 auto;padding:20px}
+.header{background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px 12px 0 0;padding:30px;text-align:center;color:#fff}
+.header h1{font-size:24px;margin-bottom:6px}
+.header p{opacity:.85;font-size:14px}
+.body-card{background:#fff;border-radius:0 0 12px 12px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+.summary{display:flex;gap:20px;margin-bottom:20px;justify-content:center}
+.stat{text-align:center;padding:16px 24px;border-radius:8px;background:#f9fafb}
+.stat-value{font-size:28px;font-weight:700}
+.stat-label{font-size:13px;color:#666;margin-top:4px}
+.stat.success .stat-value{color:#10b981}
+.stat.fail .stat-value{color:#ef4444}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+th{background:#f9fafb;padding:8px 12px;text-align:left;font-weight:600;font-size:11px;color:#666;text-transform:uppercase;border-bottom:2px solid #e5e7eb}
+.footer{text-align:center;margin-top:24px;padding-top:16px;border-top:1px solid #eee;font-size:12px;color:#999}
+</style></head><body>
+<div class="container">
+<div class="header">
+<h1>📬 每日心语 · 发送报告</h1>
+<p>${period}发送 · ${dateStr}</p>
+</div>
+<div class="body-card">
+<div class="summary">
+<div class="stat success">
+<div class="stat-value">${success}</div>
+<div class="stat-label">✅ 发送成功</div>
+</div>
+<div class="stat ${failed > 0 ? 'fail' : 'success'}">
+<div class="stat-value">${failed}</div>
+<div class="stat-label">${failed > 0 ? '❌ 发送失败' : '✅ 全部成功'}</div>
+</div>
+<div class="stat">
+<div class="stat-value">${results.length}</div>
+<div class="stat-label">📊 共计</div>
+</div>
+</div>
+
+<div style="font-size:13px;color:#666;padding:8px 0 4px">
+语录来源: ${sourceSummary}
+</div>
+
+<table>
+<tr><th>姓名</th><th>邮箱</th><th>语录</th><th>来源</th><th style="text-align:center">状态</th></tr>
+${rows}
+</table>
+
+${failed > 0 ? `<div style="padding:12px;background:#fef2f2;border-radius:6px;font-size:13px;color:#dc2626;margin-top:12px">
+⚠️ 有 <strong>${failed}</strong> 人发送失败，建议检查 Brevo 配置或收件人邮箱是否正确
+</div>` : ''}
+
+<div class="footer">
+<p>🧾 语录来源说明：</p>
+<p style="font-size:11px;margin-top:4px">🌐 API实时获取 = 从 quotable.io / zenquotes.io 等免费 API 获取</p>
+<p style="font-size:11px">📚 内置库 = 使用项目内置的中英文励志语录库（160+条）</p>
+<p style="font-size:11px">—— 每日心语 · 自动发送系统</p>
+</div>
+</div></div></body></html>`;
+
+  await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: {
+      'api-key': BREVO_API_KEY,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      sender: { name: BREVO_SENDER_NAME, email: BREVO_SENDER_EMAIL },
+      to: [{ email: 'hashen@nvisionglobal.com', name: 'Harry Shen' }],
+      subject: `📬 每日心语发送报告 · ${period} · ${dateStr}`,
+      htmlContent: html,
+    }),
+  });
+
+  console.log(`\n📬 发送报告已发送至 hashen@nvisionglobal.com`);
+}
+
+function escHtml(s: string): string {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function trunc(s: string, n: number): string {
+  return s.length > n ? s.slice(0, n) + '…' : s;
+}
+
 // ===== 主逻辑 =====
 async function main() {
   console.log('========================================');
@@ -239,17 +355,18 @@ async function main() {
 
   // 为每个收件人获取不同的语录
   const used = new Set<string>();
-  const results: { name: string; email: string; ok: boolean }[] = [];
+  const results: SendResult[] = [];
 
   for (const r of RECIPIENTS) {
-    // 取语录：先试 API，失败用内置（不重复）
     let quote: { content: string; author: string } | null = null;
+    let source = '';
 
     // 尝试从 API 获取
     for (let attempt = 0; attempt < 5; attempt++) {
       const apiQuote = await fetchQuoteFromAPI();
       if (apiQuote && !used.has(apiQuote.content.substring(0, 40))) {
         quote = apiQuote;
+        source = '🌐 API实时获取';
         used.add(apiQuote.content.substring(0, 40));
         break;
       }
@@ -257,10 +374,11 @@ async function main() {
 
     // API 没取到或不唯一，从内置库随机取
     if (!quote) {
-      const shuffled = BUILT_IN_QUOTES.sort(() => Math.random() - 0.5);
+      const shuffled = [...BUILT_IN_QUOTES].sort(() => Math.random() - 0.5);
       for (const q of shuffled) {
         if (!used.has(q.content.substring(0, 40))) {
           quote = q;
+          source = '📚 内置库';
           used.add(q.content.substring(0, 40));
           break;
         }
@@ -270,30 +388,44 @@ async function main() {
     // 实在没有了就用默认
     if (!quote) {
       quote = { content: '每一天都是新的开始，加油！', author: '每日心语' };
+      source = 'ℹ️ 默认';
     }
 
-    console.log(`📧 发送给 ${r.name} (${r.email}):`);
+    console.log(`📧 ${r.name} (${r.email}) [${source}]:`);
     console.log(`    "${quote.content}" — ${quote.author}`);
 
     const html = buildHtml(quote.content, quote.author, r.name);
     const ok = await sendEmail(r.name, r.email, html);
-    results.push({ name: r.name, email: r.email, ok });
+    results.push({
+      name: r.name, email: r.email, ok,
+      quoteContent: quote.content, quoteAuthor: quote.author,
+      quoteSource: source,
+    });
 
-    // 避免同时请求过多
     await new Promise(r => setTimeout(r, 200));
   }
 
-  // 汇总
+  // === 汇总 ===
   const success = results.filter(r => r.ok).length;
   const failed = results.filter(r => !r.ok).length;
+  const failedList = results.filter(r => !r.ok);
+
   console.log(`\n========================================`);
   console.log(`  ✅ 成功: ${success}  |  ❌ 失败: ${failed}  |  📊 共 ${results.length} 人`);
   console.log(`  🕐 ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`);
   console.log(`========================================`);
-  // 发送结果作为 Actions 输出
+
+  // 将结果写入 Actions 输出
   if (process.env.GITHUB_OUTPUT) {
-    const fs = require('fs');
-    fs.appendFileSync(process.env.GITHUB_OUTPUT, `success_count=${success}\nfail_count=${failed}\n`);
+    require('fs').appendFileSync(process.env.GITHUB_OUTPUT,
+      `success_count=${success}\nfail_count=${failed}\n`);
+  }
+
+  // === 发送报告给管理员 ===
+  try {
+    await sendReport(results, success, failed);
+  } catch (err: any) {
+    console.error(`❌ 发送报告失败: ${err.message}`);
   }
 }
 
