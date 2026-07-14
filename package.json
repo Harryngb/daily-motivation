@@ -15,6 +15,7 @@
     "cron": "^3.1.6",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
+    "libsodium-wrappers": "^0.8.4",
     "nodemailer": "^6.9.13",
     "uuid": "^9.0.0"
   },
@@ -22,8 +23,9 @@
     "@types/better-sqlite3": "^7.6.8",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
-    "@types/nodemailer": "^6.4.14",
+    "@types/libsodium-wrappers": "^0.7.14",
     "@types/node": "^20.11.0",
+    "@types/nodemailer": "^6.4.14",
     "@types/uuid": "^9.0.7",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
