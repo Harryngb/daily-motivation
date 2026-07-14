@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日心语管理平台</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">✨</span>
+          <span class="logo-text">每日心语</span>
+        </div>
+        <p class="sidebar-subtitle">Daily Inspiration Platform</p>
+      </div>
+
+      <nav class="nav" id="mainNav">
+        <a class="nav-item active" data-tab="dashboard" href="#">
+          <span class="nav-icon">📊</span>
+          <span>仪表盘</span>
+        </a>
+        <a class="nav-item" data-tab="recipients" href="#">
+          <span class="nav-icon">👥</span>
+          <span>收件人管理</span>
+        </a>
+        <a class="nav-item" data-tab="settings" href="#">
+          <span class="nav-icon">⚙️</span>
+          <span>系统设置</span>
+        </a>
+        <a class="nav-item" data-tab="history" href="#">
+          <span class="nav-icon">📜</span>
+          <span>发送记录</span>
+        </a>
+        <a class="nav-item" data-tab="quotes" href="#">
+          <span class="nav-icon">💬</span>
+          <span>名言管理</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">系统状态</span>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+      <!-- Dashboard -->
+      <section class="tab-content active" id="tab-dashboard">
+        <div class="page-header">
+          <h1>仪表盘</h1>
+          <p>系统运行状态概览</p>
+        </div>
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card">
+            <div class="stat-value" id="statRecipients">0</div>
+            <div class="stat-label">收件人总数</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statActive">0</div>
+            <div class="stat-label">活跃收件人</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statSent">0</div>
+            <div class="stat-label">已发送条数</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statQuotes">0</div>
+            <div class="stat-label">语录总数</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statSmtp" style="font-size:20px">-</div>
+            <div class="stat-label">邮件服务</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statLastSend">-</div>
+            <div class="stat-label">最近发送</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 24px;">
+          <div class="card-header">
+            <h2>快捷操作</h2>
+          </div>
+          <div class="quick-actions">
+            <button class="btn btn-primary" onclick="testSend()">📧 发送测试邮件</button>
+            <button class="btn btn-secondary" onclick="sendNow()">🚀 立即发送</button>
+            <button class="btn btn-outline" onclick="fetchFreshQuotes()">🔄 获取新鲜语录</button>
+            <button class="btn btn-outline" onclick="restartScheduler()">🔄 重启定时器</button>
+            <button class="btn btn-outline btn-danger-outline" onclick="resetQuotes()">🗑️ 重置发送记录</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 24px;">
+          <div class="card-header">
+            <h2>定时发送计划</h2>
+          </div>
+          <table class="table" id="scheduleTable">
+            <thead>
+              <tr><th>发送时间</th><th>时段</th><th>下次执行</th></tr>
+            </thead>
+            <tbody id="scheduleBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Recipients -->
+      <section class="tab-content" id="tab-recipients">
+        <div class="page-header">
+          <h1>收件人管理</h1>
+          <p>管理接收每日心语的成员</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>收件人列表</h2>
+            <button class="btn btn-primary" onclick="showAddRecipient()">+ 添加收件人</button>
+          </div>
+          <table class="table" id="recipientTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>邮箱</th>
+                <th>状态</th>
+                <th>创建时间</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="recipientBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Settings -->
+      <section class="tab-content" id="tab-settings">
+        <div class="page-header">
+          <h1>系统设置</h1>
+          <p>配置邮件服务和发送参数</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>🚀 Brevo (Sendinblue) 发送通道【推荐】</h2>
+          </div>
+          <div class="form-grid">
+            <div class="form-group" style="grid-column:1/-1">
+              <label>Brevo API Key</label>
+              <input type="password" id="brevo_api_key" placeholder="xkeysib-..." />
+              <span class="form-hint">已预填在 .env 文件中，也可以在后台修改</span>
+            </div>
+            <div class="form-group">
+              <label>发件人名称</label>
+              <input type="text" id="brevo_sender_name" placeholder="每日心语" />
+            </div>
+            <div class="form-group">
+              <label>发件人邮箱（需在 Brevo 后台验证）</label>
+              <input type="email" id="brevo_sender_email" placeholder="sender@verified-domain.com" />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-secondary" id="verifyBrevoBtn" onclick="verifyBrevo()">🔍 验证 Brevo 配置</button>
+            <span style="font-size:12px;color:var(--gray-400)">发件人邮箱需先在 Brevo 后台 → Senders 中验证</span>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <div class="card-header">
+            <h2>📧 SMTP 备用通道</h2>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>SMTP 服务器</label>
+              <input type="text" id="smtp_host" placeholder="smtp.qq.com" />
+            </div>
+            <div class="form-group">
+              <label>SMTP 端口</label>
+              <input type="text" id="smtp_port" placeholder="587" />
+            </div>
+            <div class="form-group">
+              <label>邮箱账号</label>
+              <input type="text" id="smtp_user" placeholder="your-email@qq.com" />
+            </div>
+            <div class="form-group">
+              <label>邮箱密码/授权码</label>
+              <input type="password" id="smtp_pass" placeholder="请输入授权码" />
+            </div>
+            <div class="form-group">
+              <label>发件人名称</label>
+              <input type="text" id="smtp_from" placeholder="每日心语 <noreply@example.com>" />
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 16px;">
+          <div class="card-header">
+            <h2>发送计划</h2>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>发送时间（多个时间用英文逗号分隔）</label>
+              <input type="text" id="send_times" placeholder="08:00,17:00" />
+              <span class="form-hint">例如: 08:00,17:00 表示每天早晚各发一次</span>
+            </div>
+            <div class="form-group">
+              <label>时区</label>
+              <select id="timezone">
+                <option value="Asia/Shanghai">亚洲/上海 (UTC+8)</option>
+                <option value="Asia/Hong_Kong">亚洲/香港 (UTC+8)</option>
+                <option value="Asia/Tokyo">亚洲/东京 (UTC+9)</option>
+                <option value="Asia/Singapore">亚洲/新加坡 (UTC+8)</option>
+                <option value="America/New_York">美洲/纽约 (UTC-5)</option>
+                <option value="Europe/London">欧洲/伦敦 (UTC+0)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" onclick="saveSettings()">💾 保存设置</button>
+            <span id="settingsMessage" class="form-message"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- History -->
+      <section class="tab-content" id="tab-history">
+        <div class="page-header">
+          <h1>发送记录</h1>
+          <p>查看每日心语的发送历史</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>最近发送记录</h2>
+            <span class="badge" id="historyCount">共 0 条</span>
+          </div>
+          <table class="table" id="historyTable">
+            <thead>
+              <tr>
+                <th>时间</th>
+                <th>收件人</th>
+                <th>邮箱</th>
+                <th>内容</th>
+                <th>时段</th>
+                <th>状态</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+          <div class="load-more" id="loadMoreWrap" style="display:none">
+            <button class="btn btn-outline" onclick="loadMoreHistory()">加载更多</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quotes -->
+      <section class="tab-content" id="tab-quotes">
+        <div class="page-header">
+          <h1>名言管理</h1>
+          <p>管理名言库，支持添加自定义名言</p>
+        </div>
+
+        <div class="stats-grid mini">
+          <div class="stat-card">
+            <div class="stat-value" id="qTotal">0</div>
+            <div class="stat-label">语录总数</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="qBuiltIn">0</div>
+            <div class="stat-label">内置语录</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="qDynamic">0</div>
+            <div class="stat-label">🌐 动态获取</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="qCustom">0</div>
+            <div class="stat-label">自定义语录</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 16px;">
+          <div class="card-header">
+            <h2>添加自定义名言</h2>
+          </div>
+          <div class="form-inline">
+            <div class="form-group" style="flex:2">
+              <input type="text" id="newQuoteContent" placeholder="输入名言内容..." />
+            </div>
+            <div class="form-group" style="flex:1">
+              <input type="text" id="newQuoteAuthor" placeholder="作者（可选）" />
+            </div>
+            <button class="btn btn-primary" onclick="addQuote()">添加</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 16px;">
+          <div class="card-header">
+            <h2>自定义名言列表</h2>
+            <span class="badge" id="customQuoteCount">0 条</span>
+          </div>
+          <table class="table" id="customQuoteTable">
+            <thead>
+              <tr><th>#</th><th>内容</th><th>作者</th><th>操作</th></tr>
+            </thead>
+            <tbody id="customQuoteBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 id="modalTitle">标题</h3>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-actions" id="modalActions"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+name: 📬 每日心语自动发送
+
+on:
+  schedule:
+    # 北京时间 08:00 = UTC 00:00
+    - cron: '0 0 * * *'
+    # 北京时间 17:00 = UTC 09:00
+    - cron: '0 9 * * *'
+  # 也可以手动触发
+  workflow_dispatch:
+
+jobs:
+  send:
+    name: 发送每日心语
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 📧 发送每日心语
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          BREVO_SENDER_EMAIL: ${{ secrets.BREVO_SENDER_EMAIL }}
+          BREVO_SENDER_NAME: 每日心语
+        run: npx tsx src/gh-send.ts
+
+      - name: 发送结果通知
+        if: always()
+        run: |
+          echo "✅ 每日心语发送任务完成"
+          echo "详情: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
