@@ -1,0 +1,2382 @@
+[
+  {
+    "content": "千里之行，始于足下。",
+    "author": "老子"
+  },
+  {
+    "content": "天行健，君子以自强不息。",
+    "author": "《周易》"
+  },
+  {
+    "content": "不积跬步，无以至千里。",
+    "author": "荀子"
+  },
+  {
+    "content": "宝剑锋从磨砺出，梅花香自苦寒来。",
+    "author": "《警世贤文》"
+  },
+  {
+    "content": "世上无难事，只怕有心人。",
+    "author": "民间谚语"
+  },
+  {
+    "content": "有志者，事竟成。",
+    "author": "《后汉书》"
+  },
+  {
+    "content": "业精于勤，荒于嬉。",
+    "author": "韩愈"
+  },
+  {
+    "content": "天生我材必有用。",
+    "author": "李白"
+  },
+  {
+    "content": "长风破浪会有时。",
+    "author": "李白"
+  },
+  {
+    "content": "会当凌绝顶，一览众山小。",
+    "author": "杜甫"
+  },
+  {
+    "content": "千磨万击还坚劲，任尔东西南北风。",
+    "author": "郑板桥"
+  },
+  {
+    "content": "不经一番寒彻骨，怎得梅花扑鼻香。",
+    "author": "黄蘖禅师"
+  },
+  {
+    "content": "山重水复疑无路，柳暗花明又一村。",
+    "author": "陆游"
+  },
+  {
+    "content": "沉舟侧畔千帆过，病树前头万木春。",
+    "author": "刘禹锡"
+  },
+  {
+    "content": "天将降大任于斯人也，必先苦其心志。",
+    "author": "孟子"
+  },
+  {
+    "content": "锲而不舍，金石可镂。",
+    "author": "荀子"
+  },
+  {
+    "content": "三人行，必有我师焉。",
+    "author": "孔子"
+  },
+  {
+    "content": "学而不思则罔，思而不学则殆。",
+    "author": "孔子"
+  },
+  {
+    "content": "志当存高远。",
+    "author": "诸葛亮"
+  },
+  {
+    "content": "非淡泊无以明志，非宁静无以致远。",
+    "author": "诸葛亮"
+  },
+  {
+    "content": "少壮不努力，老大徒伤悲。",
+    "author": "《长歌行》"
+  },
+  {
+    "content": "莫等闲，白了少年头。",
+    "author": "岳飞"
+  },
+  {
+    "content": "老当益壮，宁移白首之心？",
+    "author": "王勃"
+  },
+  {
+    "content": "博观而约取，厚积而薄发。",
+    "author": "苏轼"
+  },
+  {
+    "content": "古之立大事者，不惟有超世之才，亦必有坚忍不拔之志。",
+    "author": "苏轼"
+  },
+  {
+    "content": "路漫漫其修远兮，吾将上下而求索。",
+    "author": "屈原"
+  },
+  {
+    "content": "穷则独善其身，达则兼济天下。",
+    "author": "孟子"
+  },
+  {
+    "content": "大鹏一日同风起，扶摇直上九万里。",
+    "author": "李白"
+  },
+  {
+    "content": "人生自古谁无死，留取丹心照汗青。",
+    "author": "文天祥"
+  },
+  {
+    "content": "黑发不知勤学早，白首方悔读书迟。",
+    "author": "颜真卿"
+  },
+  {
+    "content": "天下兴亡，匹夫有责。",
+    "author": "顾炎武"
+  },
+  {
+    "content": "静以修身，俭以养德。",
+    "author": "诸葛亮"
+  },
+  {
+    "content": "欲穷千里目，更上一层楼。",
+    "author": "王之涣"
+  },
+  {
+    "content": "咬定青山不放松，立根原在破岩中。",
+    "author": "郑板桥"
+  },
+  {
+    "content": "纸上得来终觉浅，绝知此事要躬行。",
+    "author": "陆游"
+  },
+  {
+    "content": "问渠那得清如许，为有源头活水来。",
+    "author": "朱熹"
+  },
+  {
+    "content": "不畏浮云遮望眼，自缘身在最高层。",
+    "author": "王安石"
+  },
+  {
+    "content": "苦心人，天不负，卧薪尝胆，三千越甲可吞吴。",
+    "author": "蒲松龄"
+  },
+  {
+    "content": "有志不在年高，无志空长百岁。",
+    "author": "石成金"
+  },
+  {
+    "content": "丈夫志四海，万里犹比邻。",
+    "author": "曹植"
+  },
+  {
+    "content": "业精于勤荒于嬉，行成于思毁于随。",
+    "author": "韩愈"
+  },
+  {
+    "content": "读书破万卷，下笔如有神。",
+    "author": "杜甫"
+  },
+  {
+    "content": "近水知鱼性，近山识鸟音。",
+    "author": "《增广贤文》"
+  },
+  {
+    "content": "一年之计在于春，一日之计在于晨。",
+    "author": "萧绎"
+  },
+  {
+    "content": "勿以恶小而为之，勿以善小而不为。",
+    "author": "刘备"
+  },
+  {
+    "content": "不飞则已，一飞冲天；不鸣则已，一鸣惊人。",
+    "author": "司马迁"
+  },
+  {
+    "content": "精诚所至，金石为开。",
+    "author": "《后汉书》"
+  },
+  {
+    "content": "海纳百川，有容乃大。",
+    "author": "林则徐"
+  },
+  {
+    "content": "人生能有几回搏，此时不搏何时搏。",
+    "author": "容国团"
+  },
+  {
+    "content": "不是因为看到希望才坚持，而是因为坚持才看到希望。",
+    "author": "佚名"
+  },
+  {
+    "content": "你今天的努力，是未来你感激自己的理由。",
+    "author": "佚名"
+  },
+  {
+    "content": "成功的路上并不拥挤，因为坚持的人不多。",
+    "author": "佚名"
+  },
+  {
+    "content": "梦想还是要有的，万一实现了呢？",
+    "author": "佚名"
+  },
+  {
+    "content": "当你觉得累的时候，你正在走上坡路。",
+    "author": "佚名"
+  },
+  {
+    "content": "人生没有白走的路，每一步都算数。",
+    "author": "佚名"
+  },
+  {
+    "content": "种一棵树最好的时间是十年前，其次是现在。",
+    "author": "佚名"
+  },
+  {
+    "content": "你只管努力，剩下的交给时间。",
+    "author": "佚名"
+  },
+  {
+    "content": "所有的幸运，都是努力埋下的伏笔。",
+    "author": "佚名"
+  },
+  {
+    "content": "每一个清晨都是一个新的开始。",
+    "author": "佚名"
+  },
+  {
+    "content": "乾坤未定，你我皆是黑马。",
+    "author": "佚名"
+  },
+  {
+    "content": "星光不问赶路人，时光不负有心人。",
+    "author": "佚名"
+  },
+  {
+    "content": "你若盛开，蝴蝶自来。",
+    "author": "佚名"
+  },
+  {
+    "content": "不忘初心，方得始终。",
+    "author": "《华严经》"
+  },
+  {
+    "content": "万物皆有裂痕，那是光照进来的地方。",
+    "author": "莱昂纳德·科恩"
+  },
+  {
+    "content": "心若向阳，无畏悲伤。",
+    "author": "佚名"
+  },
+  {
+    "content": "生活明朗，万物可爱。",
+    "author": "佚名"
+  },
+  {
+    "content": "一切都会好起来的。",
+    "author": "佚名"
+  },
+  {
+    "content": "既然选择了远方，便只顾风雨兼程。",
+    "author": "汪国真"
+  },
+  {
+    "content": "没有比脚更长的路，没有比人更高的山。",
+    "author": "汪国真"
+  },
+  {
+    "content": "生活不能等待别人来安排。",
+    "author": "路遥"
+  },
+  {
+    "content": "昨天是段历史，明天是个谜团，而今天是天赐的礼物。",
+    "author": "《功夫熊猫》"
+  },
+  {
+    "content": "每一个优秀的人都有一段沉默的时光。",
+    "author": "佚名"
+  },
+  {
+    "content": "最怕你一生碌碌无为，还安慰自己平凡可贵。",
+    "author": "佚名"
+  },
+  {
+    "content": "每天进步一点点，坚持带来大改变。",
+    "author": "佚名"
+  },
+  {
+    "content": "将来的你一定会感谢现在拼命的自己。",
+    "author": "佚名"
+  },
+  {
+    "content": "把自己活成一道光，因为你不知道谁会借着你的光走出黑暗。",
+    "author": "佚名"
+  },
+  {
+    "content": "如果生活给了你柠檬，就把它做成柠檬水。",
+    "author": "佚名"
+  },
+  {
+    "content": "真正让人强大的，不是坚持，而是放下。",
+    "author": "佚名"
+  },
+  {
+    "content": "所有的努力，最终都会绕一个大圈回报给你。",
+    "author": "佚名"
+  },
+  {
+    "content": "跌倒了，爬起来，拍拍身上的土，继续前行。",
+    "author": "佚名"
+  },
+  {
+    "content": "不要因为别人而否定自己，你值得世间所有的美好。",
+    "author": "佚名"
+  },
+  {
+    "content": "与其抱怨黑暗，不如点亮蜡烛。",
+    "author": "佚名"
+  },
+  {
+    "content": "改变自己，是自救；影响他人，是救人。",
+    "author": "佚名"
+  },
+  {
+    "content": "每个人的花期不同，不必焦虑有人比你提前拥有。",
+    "author": "佚名"
+  },
+  {
+    "content": "所谓的光辉岁月，不是闪耀的日子，而是无人问津时你对梦想的偏执。",
+    "author": "佚名"
+  },
+  {
+    "content": "人生可以平凡，但不能平庸。",
+    "author": "佚名"
+  },
+  {
+    "content": "这世界不会辜负每一份努力和坚持。",
+    "author": "佚名"
+  },
+  {
+    "content": "没有伞的孩子，必须努力奔跑。",
+    "author": "佚名"
+  },
+  {
+    "content": "这一秒不放弃，下一秒就有希望。",
+    "author": "佚名"
+  },
+  {
+    "content": "人生的奔跑，不在于瞬间的爆发，而在于途中的坚持。",
+    "author": "佚名"
+  },
+  {
+    "content": "纵有千百个理由放弃，也要找一个理由坚持。",
+    "author": "佚名"
+  },
+  {
+    "content": "不要让未来的你，讨厌现在的自己。",
+    "author": "佚名"
+  },
+  {
+    "content": "总是有人要赢，为什么不能是我？",
+    "author": "科比·布莱恩特"
+  },
+  {
+    "content": "选择热爱，就不觉得辛苦。",
+    "author": "佚名"
+  },
+  {
+    "content": "今天最好的表现是明天最低的要求。",
+    "author": "佚名"
+  },
+  {
+    "content": "想要和得到之间，还有两个字——做到。",
+    "author": "佚名"
+  },
+  {
+    "content": "不要假装很努力，因为结果不会陪你演戏。",
+    "author": "佚名"
+  },
+  {
+    "content": "努力不是为了感动谁，而是为了有选择的权利。",
+    "author": "佚名"
+  },
+  {
+    "content": "踏踏实实做事，光明磊落做人。",
+    "author": "佚名"
+  },
+  {
+    "content": "太阳每天都是新的，生活每天都在变化。",
+    "author": "佚名"
+  },
+  {
+    "content": "活在当下，珍惜眼前。",
+    "author": "佚名"
+  },
+  {
+    "content": "做自己生命的主角，而不是别人生命中的看客。",
+    "author": "佚名"
+  },
+  {
+    "content": "生活不是等待风暴过去，而是学会在雨中翩翩起舞。",
+    "author": "佚名"
+  },
+  {
+    "content": "比别人多一点努力，你就会多一份成绩。",
+    "author": "佚名"
+  },
+  {
+    "content": "成功的秘诀在于坚持自己的目标和信念。",
+    "author": "佚名"
+  },
+  {
+    "content": "态度决定高度，细节决定成败。",
+    "author": "佚名"
+  },
+  {
+    "content": "用心做好每一件事，比什么都重要。",
+    "author": "佚名"
+  },
+  {
+    "content": "勤奋是成功的基石，努力是人生的阶梯。",
+    "author": "佚名"
+  },
+  {
+    "content": "自信是成功的第一秘诀。",
+    "author": "爱默生"
+  },
+  {
+    "content": "世上本没有路，走的人多了也便成了路。",
+    "author": "鲁迅"
+  },
+  {
+    "content": "哪里有天才，我是把别人喝咖啡的功夫都用在工作上的。",
+    "author": "鲁迅"
+  },
+  {
+    "content": "时间就像海绵里的水，只要愿挤总还是有的。",
+    "author": "鲁迅"
+  },
+  {
+    "content": "寄意寒星荃不察，我以我血荐轩辕。",
+    "author": "鲁迅"
+  },
+  {
+    "content": "横眉冷对千夫指，俯首甘为孺子牛。",
+    "author": "鲁迅"
+  },
+  {
+    "content": "理性和判断力是 leadership 的两大支柱。",
+    "author": "佚名"
+  },
+  {
+    "content": "团队不是人多，而是心齐。",
+    "author": "佚名"
+  },
+  {
+    "content": "优秀的人找方法，平庸的人找借口。",
+    "author": "佚名"
+  },
+  {
+    "content": "带着解决方案去汇报，而不是带着问题。",
+    "author": "佚名"
+  },
+  {
+    "content": "高效工作不是做更多的事，而是做更重要的事。",
+    "author": "佚名"
+  },
+  {
+    "content": "把工作当成事业来做，每一天都是成长。",
+    "author": "佚名"
+  },
+  {
+    "content": "沟通是职场中最贵的生产力。",
+    "author": "佚名"
+  },
+  {
+    "content": "主动承担责任的人，终将成为团队的骨干。",
+    "author": "佚名"
+  },
+  {
+    "content": "没有完美的个人，只有完美的团队。",
+    "author": "佚名"
+  },
+  {
+    "content": "解决问题的能力决定了你的价值。",
+    "author": "佚名"
+  },
+  {
+    "content": "做完与做好的区别，决定了你的高度。",
+    "author": "佚名"
+  },
+  {
+    "content": "当你的才华还撑不起野心时，就该静下心来学习。",
+    "author": "佚名"
+  },
+  {
+    "content": "你的时间花在哪里，你的成就就在哪里。",
+    "author": "佚名"
+  },
+  {
+    "content": "平凡的人听从命运，只有强者才是自己的主宰。",
+    "author": "佚名"
+  },
+  {
+    "content": "开开心心上班，快快乐乐下班。",
+    "author": "每日心语"
+  },
+  {
+    "content": "生活虽苦，但你是甜的。",
+    "author": "佚名"
+  },
+  {
+    "content": "越努力，越幸运。",
+    "author": "佚名"
+  },
+  {
+    "content": "The only way to do great work is to love what you do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "content": "Stay hungry, stay foolish.",
+    "author": "Steve Jobs"
+  },
+  {
+    "content": "Innovation distinguishes between a leader and a follower.",
+    "author": "Steve Jobs"
+  },
+  {
+    "content": "Your time is limited, don't waste it living someone else's life.",
+    "author": "Steve Jobs"
+  },
+  {
+    "content": "The people who are crazy enough to think they can change the world are the ones who do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "content": "Believe you can and you're halfway there.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "content": "The future belongs to those who believe in the beauty of their dreams.",
+    "author": "Eleanor Roosevelt"
+  },
+  {
+    "content": "In the middle of difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "content": "The only impossible journey is the one you never begin.",
+    "author": "Tony Robbins"
+  },
+  {
+    "content": "The best time to plant a tree was 20 years ago. The second best time is now.",
+    "author": "Chinese Proverb"
+  },
+  {
+    "content": "Whether you think you can or you think you can't, you're right.",
+    "author": "Henry Ford"
+  },
+  {
+    "content": "You miss 100% of the shots you don't take.",
+    "author": "Wayne Gretzky"
+  },
+  {
+    "content": "It always seems impossible until it's done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "content": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "content": "Education is the most powerful weapon which you can use to change the world.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "content": "I am the master of my fate: I am the captain of my soul.",
+    "author": "William Ernest Henley"
+  },
+  {
+    "content": "Be the change that you wish to see in the world.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "Happiness is when what you think, what you say, and what you do are in harmony.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "Strength does not come from physical capacity. It comes from an indomitable will.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "First they ignore you, then they laugh at you, then they fight you, then you win.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "The future depends on what you do today.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "Hard work beats talent when talent doesn't work hard.",
+    "author": "Tim Notke"
+  },
+  {
+    "content": "Don't count the days, make the days count.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "content": "I am the greatest, I said that even before I knew I was.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "content": "If you can dream it, you can do it.",
+    "author": "Walt Disney"
+  },
+  {
+    "content": "All our dreams can come true, if we have the courage to pursue them.",
+    "author": "Walt Disney"
+  },
+  {
+    "content": "The difference between winning and losing is most often not quitting.",
+    "author": "Walt Disney"
+  },
+  {
+    "content": "The best revenge is massive success.",
+    "author": "Frank Sinatra"
+  },
+  {
+    "content": "Courage is resistance to fear, mastery of fear, not absence of fear.",
+    "author": "Mark Twain"
+  },
+  {
+    "content": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "content": "Twenty years from now you will be more disappointed by the things you didn't do than by the ones you did do.",
+    "author": "Mark Twain"
+  },
+  {
+    "content": "Never let your schooling interfere with your education.",
+    "author": "Mark Twain"
+  },
+  {
+    "content": "Tough times never last, but tough people do.",
+    "author": "Robert H. Schuller"
+  },
+  {
+    "content": "You don't have to be great to start, but you have to start to be great.",
+    "author": "Zig Ziglar"
+  },
+  {
+    "content": "Motivation is what gets you started. Habit is what keeps you going.",
+    "author": "Jim Ryun"
+  },
+  {
+    "content": "If opportunity doesn't knock, build a door.",
+    "author": "Milton Berle"
+  },
+  {
+    "content": "A goal without a plan is just a wish.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "content": "The best way to predict the future is to invent it.",
+    "author": "Alan Kay"
+  },
+  {
+    "content": "Well done is better than well said.",
+    "author": "Benjamin Franklin"
+  },
+  {
+    "content": "Happiness is not something ready made. It comes from your own actions.",
+    "author": "Dalai Lama"
+  },
+  {
+    "content": "Try not to become a man of success, but rather try to become a man of value.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "We may encounter many defeats but we must not be defeated.",
+    "author": "Maya Angelou"
+  },
+  {
+    "content": "Quality is not an act, it is a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "Patience is bitter, but its fruit is sweet.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "I have not failed. I've just found 10,000 ways that won't work.",
+    "author": "Thomas Edison"
+  },
+  {
+    "content": "Imagination is more important than knowledge.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "Life is like riding a bicycle. To keep your balance, you must keep moving.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "Learn from yesterday, live for today, hope for tomorrow.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "Act as if what you do makes a difference. It does.",
+    "author": "William James"
+  },
+  {
+    "content": "The only limit to our realization of tomorrow will be our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "content": "It is never too late to be what you might have been.",
+    "author": "George Eliot"
+  },
+  {
+    "content": "Be yourself; everyone else is already taken.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "content": "Do one thing every day that scares you.",
+    "author": "Eleanor Roosevelt"
+  },
+  {
+    "content": "Nothing will work unless you do.",
+    "author": "Maya Angelou"
+  },
+  {
+    "content": "Whatever you are, be a good one.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "content": "The best way to find yourself is to lose yourself in the service of others.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "I never lose. I either win or learn.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "content": "There is no passion to be found playing small.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "content": "The brave man is not he who does not feel afraid, but he who conquers that fear.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "content": "What counts in life is not the mere fact that we have lived. It is what difference we have made to the lives of others.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "content": "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
+    "author": "Eleanor Roosevelt"
+  },
+  {
+    "content": "No one can make you feel inferior without your consent.",
+    "author": "Eleanor Roosevelt"
+  },
+  {
+    "content": "Do what you can, with what you have, where you are.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "content": "The only thing we have to fear is fear itself.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "content": "Go confidently in the direction of your dreams. Live the life you have imagined.",
+    "author": "Henry David Thoreau"
+  },
+  {
+    "content": "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "content": "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "content": "The only person you are destined to become is the person you decide to be.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "content": "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
+    "author": "Mother Teresa"
+  },
+  {
+    "content": "Everything you've ever wanted is on the other side of fear.",
+    "author": "George Addair"
+  },
+  {
+    "content": "The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "content": "Success usually comes to those who are too busy to be looking for it.",
+    "author": "Henry David Thoreau"
+  },
+  {
+    "content": "If you look at what you have in life, you'll always have more.",
+    "author": "Oprah Winfrey"
+  },
+  {
+    "content": "Life is what happens when you're busy making other plans.",
+    "author": "John Lennon"
+  },
+  {
+    "content": "Perfection is not attainable, but if we chase perfection we can catch excellence.",
+    "author": "Vince Lombardi"
+  },
+  {
+    "content": "Failure is simply the opportunity to begin again, this time more intelligently.",
+    "author": "Henry Ford"
+  },
+  {
+    "content": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "content": "A person who never made a mistake never tried anything new.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "Strive not to be a success, but rather to be of value.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "The important thing is not to stop questioning.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "Logic will get you from A to B. Imagination will take you everywhere.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "The only source of knowledge is experience.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "Creativity is intelligence having fun.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "The measure of intelligence is the ability to change.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "Insanity is doing the same thing over and over again and expecting different results.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "We cannot solve our problems with the same thinking we used when we created them.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "In the middle of every difficulty lies opportunity.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "Great spirits have always encountered violent opposition from mediocre minds.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "Weakness of attitude becomes weakness of character.",
+    "author": "Albert Einstein"
+  },
+  {
+    "content": "Courage is the most important of all the virtues because without courage, you can't practice any other virtue consistently.",
+    "author": "Maya Angelou"
+  },
+  {
+    "content": "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
+    "author": "Maya Angelou"
+  },
+  {
+    "content": "Success is liking yourself, liking what you do, and liking how you do it.",
+    "author": "Maya Angelou"
+  },
+  {
+    "content": "My mission in life is not merely to survive, but to thrive.",
+    "author": "Maya Angelou"
+  },
+  {
+    "content": "You can only become truly accomplished at something you love.",
+    "author": "Maya Angelou"
+  },
+  {
+    "content": "If you don't like something, change it. If you can't change it, change your attitude.",
+    "author": "Maya Angelou"
+  },
+  {
+    "content": "The mind is everything. What you think you become.",
+    "author": "Buddha"
+  },
+  {
+    "content": "Peace comes from within. Do not seek it without.",
+    "author": "Buddha"
+  },
+  {
+    "content": "Three things cannot be long hidden: the sun, the moon, and the truth.",
+    "author": "Buddha"
+  },
+  {
+    "content": "The only real failure in life is not to be true to the best one knows.",
+    "author": "Buddha"
+  },
+  {
+    "content": "In the end, only three things matter: how much you loved, how gently you lived, and how gracefully you let go of things not meant for you.",
+    "author": "Buddha"
+  },
+  {
+    "content": "The wound is the place where the Light enters you.",
+    "author": "Rumi"
+  },
+  {
+    "content": "Let yourself be silently drawn by the strange pull of what you really love. It will not lead you astray.",
+    "author": "Rumi"
+  },
+  {
+    "content": "What you seek is seeking you.",
+    "author": "Rumi"
+  },
+  {
+    "content": "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.",
+    "author": "Rumi"
+  },
+  {
+    "content": "Raise your words, not voice. It is rain that grows flowers, not thunder.",
+    "author": "Rumi"
+  },
+  {
+    "content": "The art of knowing is knowing what to ignore.",
+    "author": "Rumi"
+  },
+  {
+    "content": "The universe is not outside of you. Look inside yourself; everything that you want, you already are.",
+    "author": "Rumi"
+  },
+  {
+    "content": "Don't be satisfied with stories, how things have gone with others. Unfold your own myth.",
+    "author": "Rumi"
+  },
+  {
+    "content": "The morning breeze has secrets to tell you. Do not go back to sleep.",
+    "author": "Rumi"
+  },
+  {
+    "content": "The unexamined life is not worth living.",
+    "author": "Socrates"
+  },
+  {
+    "content": "To know is to know that you know nothing. That is the meaning of true knowledge.",
+    "author": "Socrates"
+  },
+  {
+    "content": "Education is the kindling of a flame, not the filling of a vessel.",
+    "author": "Socrates"
+  },
+  {
+    "content": "I cannot teach anybody anything. I can only make them think.",
+    "author": "Socrates"
+  },
+  {
+    "content": "The greatest wealth is to live content with little.",
+    "author": "Plato"
+  },
+  {
+    "content": "Wise men speak because they have something to say; fools because they have to say something.",
+    "author": "Plato"
+  },
+  {
+    "content": "Courage is knowing what not to fear.",
+    "author": "Plato"
+  },
+  {
+    "content": "The measure of a man is what he does with power.",
+    "author": "Plato"
+  },
+  {
+    "content": "The whole is greater than the sum of its parts.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "Excellence is an art won by training and habituation.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "There is no great genius without a mixture of madness.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "Pleasure in the job puts perfection in the work.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "Well begun is half done.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "It is during our darkest moments that we must focus to see the light.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "Change your thoughts and you change your world.",
+    "author": "Norman Vincent Peale"
+  },
+  {
+    "content": "Action is the foundational key to all success.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "content": "Everything you can imagine is real.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "content": "The meaning of life is to find your gift. The purpose of life is to give it away.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "content": "Inspiration exists, but it has to find you working.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "content": "The world is a book, and those who do not travel read only one page.",
+    "author": "Saint Augustine"
+  },
+  {
+    "content": "Have courage for the great sorrows of life and patience for the small ones.",
+    "author": "Victor Hugo"
+  },
+  {
+    "content": "Laughter is the sun that drives winter from the human face.",
+    "author": "Victor Hugo"
+  },
+  {
+    "content": "People do not lack strength; they lack will.",
+    "author": "Victor Hugo"
+  },
+  {
+    "content": "Music expresses that which cannot be put into words and that which cannot remain silent.",
+    "author": "Victor Hugo"
+  },
+  {
+    "content": "Give me six hours to chop down a tree and I will spend the first four sharpening the axe.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "content": "In the end, it's not the years in your life that count. It's the life in your years.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "content": "Most folks are as happy as they make up their minds to be.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "content": "I will prepare and some day my chance will come.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "content": "Character may be manifested in the great moments, but it is made in the small ones.",
+    "author": "Phillip Brooks"
+  },
+  {
+    "content": "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it.",
+    "author": "Jordan Belfort"
+  },
+  {
+    "content": "Things may come to those who wait, but only the things left by those who hustle.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "content": "The key to success is to focus on goals, not obstacles.",
+    "author": "Anonymous"
+  },
+  {
+    "content": "It does not matter how many times you get knocked down, but how many times you get up.",
+    "author": "Vince Lombardi"
+  },
+  {
+    "content": "Setting goals is the first step in turning the invisible into the visible.",
+    "author": "Tony Robbins"
+  },
+  {
+    "content": "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
+    "author": "Christian D. Larson"
+  },
+  {
+    "content": "The greatest pleasure in life is doing what people say you cannot do.",
+    "author": "Walter Bagehot"
+  },
+  {
+    "content": "Hardships often prepare ordinary people for an extraordinary destiny.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "content": "You are never too old to set another goal or to dream a new dream.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "content": "Integrity is doing the right thing, even when no one is watching.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "content": "Experience: that most brutal of teachers. But you learn, my God do you learn.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "content": "Courage, dear heart.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "content": "There are far better things ahead than any we leave behind.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "content": "You can make anything by writing.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "content": "Failures are finger posts on the road to achievement.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "content": "Don't let yesterday take up too much of today.",
+    "author": "Will Rogers"
+  },
+  {
+    "content": "The weak can never forgive. Forgiveness is the attribute of the strong.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "An eye for an eye only ends up making the whole world blind.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "Hate the sin, love the sinner.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "You must be the change you wish to see in the world.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "For to be free is not merely to cast off one's chains, but to live in a way that respects and enhances the freedom of others.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "content": "If you talk to a man in a language he understands, that goes to his head. If you talk to him in his language, that goes to his heart.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "content": "Live life as though nobody is watching, and express yourself as though everyone is listening.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "content": "One of the most powerful things you can do is to be yourself, unapologetically.",
+    "author": "Anonymous"
+  },
+  {
+    "content": "Work hard in silence, let your success be your noise.",
+    "author": "Frank Ocean"
+  },
+  {
+    "content": "If you want to lift yourself up, lift up someone else.",
+    "author": "Booker T. Washington"
+  },
+  {
+    "content": "Only those who dare to fail greatly can ever achieve greatly.",
+    "author": "Robert F. Kennedy"
+  },
+  {
+    "content": "The purpose of life is to contribute in some way to making things better.",
+    "author": "Robert F. Kennedy"
+  },
+  {
+    "content": "Start where you are. Use what you have. Do what you can.",
+    "author": "Arthur Ashe"
+  },
+  {
+    "content": "The elevator to success is out of order. You'll have to use the stairs, one step at a time.",
+    "author": "Joe Girard"
+  },
+  {
+    "content": "Vision is not enough, it must be combined with venture. It is not enough to stare up the steps, we must step up the stairs.",
+    "author": "Václav Havel"
+  },
+  {
+    "content": "To be number one, you have to train like you're number two.",
+    "author": "Maurice Greene"
+  },
+  {
+    "content": "The only place where success comes before work is in the dictionary.",
+    "author": "Vidal Sassoon"
+  },
+  {
+    "content": "It's the repetition of affirmations that leads to belief.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "content": "Service to others is the rent you pay for your room here on earth.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "content": "Champions are made from something they have deep inside them — a desire, a dream, a vision.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "content": "He who is not courageous enough to take risks will accomplish nothing in life.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "content": "The more you like yourself, the less you are like anyone else, which makes you unique.",
+    "author": "Walt Disney"
+  },
+  {
+    "content": "When you're curious, you find lots of interesting things to do.",
+    "author": "Walt Disney"
+  },
+  {
+    "content": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "content": "Education is not the filling of a pail, but the lighting of a fire.",
+    "author": "William Butler Yeats"
+  },
+  {
+    "content": "Happiness is not something you postpone for the future; it is something you design for the present.",
+    "author": "Jim Rohn"
+  },
+  {
+    "content": "Either you run the day, or the day runs you.",
+    "author": "Jim Rohn"
+  },
+  {
+    "content": "Formal education will make you a living; self-education will make you a fortune.",
+    "author": "Jim Rohn"
+  },
+  {
+    "content": "The more you read, the more things you will know. The more that you learn, the more places you'll go.",
+    "author": "Dr. Seuss"
+  },
+  {
+    "content": "You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.",
+    "author": "Dr. Seuss"
+  },
+  {
+    "content": "Today you are You, that is truer than true. There is no one alive who is Youer than You.",
+    "author": "Dr. Seuss"
+  },
+  {
+    "content": "Unless someone like you cares a whole awful lot, nothing is going to get better. It's not.",
+    "author": "Dr. Seuss"
+  },
+  {
+    "content": "Don't cry because it's over, smile because it happened.",
+    "author": "Dr. Seuss"
+  },
+  {
+    "content": "Sometimes the questions are complicated and the answers are simple.",
+    "author": "Dr. Seuss"
+  },
+  {
+    "content": "Why fit in when you were born to stand out?",
+    "author": "Dr. Seuss"
+  },
+  {
+    "content": "Think left and think right and think low and think high. Oh, the thinks you can think up if only you try!",
+    "author": "Dr. Seuss"
+  },
+  {
+    "content": "Dance like nobody's watching; love like you've never been hurt.",
+    "author": "Mark Twain"
+  },
+  {
+    "content": "We need much less than we think we need.",
+    "author": "Maya Angelou"
+  },
+  {
+    "content": "You may not control all the events that happen to you, but you can decide not to be reduced by them.",
+    "author": "Maya Angelou"
+  },
+  {
+    "content": "I have learned over the years that when one's mind is made up, this diminishes fear.",
+    "author": "Rosa Parks"
+  },
+  {
+    "content": "You must never be fearful about what you are doing when it is right.",
+    "author": "Rosa Parks"
+  },
+  {
+    "content": "Each person must live their life as a model for others.",
+    "author": "Rosa Parks"
+  },
+  {
+    "content": "I would like to be remembered as a person who wanted to be free and wanted other people to be also free.",
+    "author": "Rosa Parks"
+  },
+  {
+    "content": "Things work out best for those who make the best of how things work out.",
+    "author": "John Wooden"
+  },
+  {
+    "content": "To live a creative life, we must lose our fear of being wrong.",
+    "author": "Joseph Chilton Pearce"
+  },
+  {
+    "content": "If you are not willing to risk the usual, you will have to settle for the ordinary.",
+    "author": "Jim Rohn"
+  },
+  {
+    "content": "Trust because you are willing to accept the risk, not because it's safe or certain.",
+    "author": "Anonymous"
+  },
+  {
+    "content": "Take up one idea. Make that one idea your life — think of it, dream of it, live on that idea.",
+    "author": "Swami Vivekananda"
+  },
+  {
+    "content": "All power is within you; you can do anything and everything.",
+    "author": "Swami Vivekananda"
+  },
+  {
+    "content": "Arise, awake, and stop not until the goal is achieved.",
+    "author": "Swami Vivekananda"
+  },
+  {
+    "content": "In a day, when you don't come across any problems — you can be sure that you are travelling in a wrong path.",
+    "author": "Swami Vivekananda"
+  },
+  {
+    "content": "You cannot believe in God until you believe in yourself.",
+    "author": "Swami Vivekananda"
+  },
+  {
+    "content": "The greatest religion is to be true to your own nature. Have faith in yourselves.",
+    "author": "Swami Vivekananda"
+  },
+  {
+    "content": "Great works are performed not by strength but by perseverance.",
+    "author": "Samuel Johnson"
+  },
+  {
+    "content": "The two most important days in your life are the day you are born and the day you find out why.",
+    "author": "Mark Twain"
+  },
+  {
+    "content": "The secret of success is to know something nobody else knows.",
+    "author": "Aristotle Onassis"
+  },
+  {
+    "content": "A problem is a chance for you to do your best.",
+    "author": "Duke Ellington"
+  },
+  {
+    "content": "The only way to discover the limits of the possible is to go beyond them into the impossible.",
+    "author": "Arthur C. Clarke"
+  },
+  {
+    "content": "The most difficult thing is the decision to act, the rest is merely tenacity.",
+    "author": "Amelia Earhart"
+  },
+  {
+    "content": "Success is not in what you have, but who you are.",
+    "author": "Bo Bennett"
+  },
+  {
+    "content": "If you want to achieve greatness stop asking for permission.",
+    "author": "Anonymous"
+  },
+  {
+    "content": "The more you praise and celebrate your life, the more there is in life to celebrate.",
+    "author": "Oprah Winfrey"
+  },
+  {
+    "content": "Turn your wounds into wisdom.",
+    "author": "Oprah Winfrey"
+  },
+  {
+    "content": "The biggest adventure you can take is to live the life of your dreams.",
+    "author": "Oprah Winfrey"
+  },
+  {
+    "content": "Challenges are gifts that force us to search for a new center of gravity. Don't fight them.",
+    "author": "Oprah Winfrey"
+  },
+  {
+    "content": "You become what you believe.",
+    "author": "Oprah Winfrey"
+  },
+  {
+    "content": "What we think, we become.",
+    "author": "Buddha"
+  },
+  {
+    "content": "No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.",
+    "author": "Buddha"
+  },
+  {
+    "content": "Better than a thousand hollow words is one word that brings peace.",
+    "author": "Buddha"
+  },
+  {
+    "content": "The way is not in the sky. The way is in the heart.",
+    "author": "Buddha"
+  },
+  {
+    "content": "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
+    "author": "Buddha"
+  },
+  {
+    "content": "All that we are is the result of what we have thought.",
+    "author": "Buddha"
+  },
+  {
+    "content": "Happiness does not depend on what you have or who you are. It depends solely on what you think.",
+    "author": "Buddha"
+  },
+  {
+    "content": "Your worst enemy cannot harm you as much as your own unguarded thoughts.",
+    "author": "Buddha"
+  },
+  {
+    "content": "It is better to travel well than to arrive.",
+    "author": "Buddha"
+  },
+  {
+    "content": "The trouble is, you think you have time.",
+    "author": "Buddha"
+  },
+  {
+    "content": "Every morning we are born again. What we do today is what matters most.",
+    "author": "Buddha"
+  },
+  {
+    "content": "Conquer anger with non-anger. Conquer badness with goodness. Conquer meanness with generosity. Conquer dishonesty with truth.",
+    "author": "Buddha"
+  },
+  {
+    "content": "Your work is to discover your world and then with all your heart give yourself to it.",
+    "author": "Buddha"
+  },
+  {
+    "content": "The root of suffering is attachment.",
+    "author": "Buddha"
+  },
+  {
+    "content": "Let go of the need to be right. Be kind instead.",
+    "author": "佚名"
+  },
+  {
+    "content": "The obstacle is the path.",
+    "author": "Zen Proverb"
+  },
+  {
+    "content": "Before enlightenment, chop wood, carry water. After enlightenment, chop wood, carry water.",
+    "author": "Zen Proverb"
+  },
+  {
+    "content": "To be human is to suffer. To be awake is to find meaning in the suffering.",
+    "author": "Viktor Frankl"
+  },
+  {
+    "content": "Everything can be taken from a man but one thing: the last of the human freedoms — to choose one's attitude in any given set of circumstances.",
+    "author": "Viktor Frankl"
+  },
+  {
+    "content": "When we are no longer able to change a situation, we are challenged to change ourselves.",
+    "author": "Viktor Frankl"
+  },
+  {
+    "content": "Life is never made unbearable by circumstances, but only by lack of meaning and purpose.",
+    "author": "Viktor Frankl"
+  },
+  {
+    "content": "Success, like happiness, cannot be pursued; it must ensue as the unintended side-effect of one's personal dedication to a cause greater than oneself.",
+    "author": "Viktor Frankl"
+  },
+  {
+    "content": "What is to give light must endure burning.",
+    "author": "Viktor Frankl"
+  },
+  {
+    "content": "A man who becomes conscious of the responsibility he bears toward a human being who affectionately waits for him, will never waste his life.",
+    "author": "Viktor Frankl"
+  },
+  {
+    "content": "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.",
+    "author": "Winston Churchill"
+  },
+  {
+    "content": "If you're going through hell, keep going.",
+    "author": "Winston Churchill"
+  },
+  {
+    "content": "Continuous effort — not strength or intelligence — is the key to unlocking our potential.",
+    "author": "Winston Churchill"
+  },
+  {
+    "content": "Courage is what it takes to stand up and speak. Courage is also what it takes to sit down and listen.",
+    "author": "Winston Churchill"
+  },
+  {
+    "content": "A pessimist sees the difficulty in every opportunity; an optimist sees the opportunity in every difficulty.",
+    "author": "Winston Churchill"
+  },
+  {
+    "content": "Attitude is a little thing that makes a big difference.",
+    "author": "Winston Churchill"
+  },
+  {
+    "content": "Time and health are two precious assets that we don't recognize until they are depleted.",
+    "author": "佚名"
+  },
+  {
+    "content": "The real test is not whether you avoid this failure, because you won't. It's whether you let it harden or shame you into inaction, or whether you learn from it.",
+    "author": "Barack Obama"
+  },
+  {
+    "content": "Change will not come if we wait for some other person or some other time. We are the ones we've been waiting for. We are the change that we seek.",
+    "author": "Barack Obama"
+  },
+  {
+    "content": "The best way to not feel hopeless is to exercise some control over your environment.",
+    "author": "Barack Obama"
+  },
+  {
+    "content": "If you're walking down the right path and you're willing to keep walking, eventually you'll make progress.",
+    "author": "Barack Obama"
+  },
+  {
+    "content": "Focusing your life solely on making a buck shows a certain poverty of ambition.",
+    "author": "Barack Obama"
+  },
+  {
+    "content": "Money is not the only answer, but it makes a difference.",
+    "author": "Barack Obama"
+  },
+  {
+    "content": "No matter what you do, you have to keep moving forward.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "content": "The time is always right to do what is right.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "content": "Faith is taking the first step even when you don't see the whole staircase.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "content": "Life's most persistent and urgent question is, 'What are you doing for others?'",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "content": "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "content": "Our lives begin to end the day we become silent about things that matter.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "content": "In the end, we will remember not the words of our enemies, but the silence of our friends.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "content": "I have decided to stick with love. Hate is too great a burden to bear.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "content": "The ultimate measure of a man is not where he stands in moments of comfort and convenience, but where he stands at times of challenge and controversy.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "content": "What's done is done. What's gone is gone. One of life's lessons is always moving on.",
+    "author": "佚名"
+  },
+  {
+    "content": "The greatest discovery of all time is that a person can change his future by merely changing his attitude.",
+    "author": "Oprah Winfrey"
+  },
+  {
+    "content": "If you change the way you look at things, the things you look at change.",
+    "author": "Wayne Dyer"
+  },
+  {
+    "content": "Be miserable. Or motivate yourself. Whatever has to be done, it's always your choice.",
+    "author": "Wayne Dyer"
+  },
+  {
+    "content": "Do not do what you want. Do what you believe in.",
+    "author": "佚名"
+  },
+  {
+    "content": "Everything you want is on the other side of fear.",
+    "author": "Jack Canfield"
+  },
+  {
+    "content": "You don't have to be extreme, just consistent.",
+    "author": "佚名"
+  },
+  {
+    "content": "Small daily improvements over time lead to stunning results.",
+    "author": "佚名"
+  },
+  {
+    "content": "The secret of your future is hidden in your daily routine.",
+    "author": "佚名"
+  },
+  {
+    "content": "Your habits shape your future.",
+    "author": "佚名"
+  },
+  {
+    "content": "Discipline is choosing between what you want now and what you want most.",
+    "author": "佚名"
+  },
+  {
+    "content": "Every day may not be good, but there is something good in every day.",
+    "author": "佚名"
+  },
+  {
+    "content": "The sun himself is weak when he first rises, and gathers strength and courage as the day gets on.",
+    "author": "Charles Dickens"
+  },
+  {
+    "content": "Have a heart that never hardens, and a temper that never tires, and a touch that never hurts.",
+    "author": "Charles Dickens"
+  },
+  {
+    "content": "There is nothing in the world so irresistibly contagious as laughter and good humor.",
+    "author": "Charles Dickens"
+  },
+  {
+    "content": "I will honor Christmas in my heart, and try to keep it all the year.",
+    "author": "Charles Dickens"
+  },
+  {
+    "content": "No one is useless in this world who lightens the burdens of another.",
+    "author": "Charles Dickens"
+  },
+  {
+    "content": "The pain of parting is nothing to the joy of meeting again.",
+    "author": "Charles Dickens"
+  },
+  {
+    "content": "Ask yourself: What is the best use of my time right now?",
+    "author": "佚名"
+  },
+  {
+    "content": "The only normal people are the ones you don't know very well.",
+    "author": "Alfred Adler"
+  },
+  {
+    "content": "Trust yourself. You know more than you think you do.",
+    "author": "Benjamin Spock"
+  },
+  {
+    "content": "When you know better, you do better.",
+    "author": "Maya Angelou"
+  },
+  {
+    "content": "If you want to know where your heart is, look to where your mind goes when it wanders.",
+    "author": "佚名"
+  },
+  {
+    "content": "We are what we pretend to be, so we must be careful about what we pretend to be.",
+    "author": "Kurt Vonnegut"
+  },
+  {
+    "content": "What is essential is invisible to the eye.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "content": "Love does not consist of gazing at each other, but in looking outward together in the same direction.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "content": "A goal without a timeline is just a dream.",
+    "author": "佚名"
+  },
+  {
+    "content": "Success is a journey, not a destination.",
+    "author": "佚名"
+  },
+  {
+    "content": "The difference between ordinary and extraordinary is that little extra.",
+    "author": "佚名"
+  },
+  {
+    "content": "Amateurs sit and wait for inspiration. The rest of us just get up and go to work.",
+    "author": "佚名"
+  },
+  {
+    "content": "The secret to success is to start.",
+    "author": "佚名"
+  },
+  {
+    "content": "Perfection is not when there is no more to add, but when there is no more to take away.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "content": "The privilege of a lifetime is to become who you truly are.",
+    "author": "Carl Jung"
+  },
+  {
+    "content": "Who looks outside, dreams; who looks inside, awakes.",
+    "author": "Carl Jung"
+  },
+  {
+    "content": "I am not what happened to me, I am what I choose to become.",
+    "author": "Carl Jung"
+  },
+  {
+    "content": "Your vision will become clear only when you can look into your own heart. Who looks outside, dreams; who looks inside, awakes.",
+    "author": "Carl Jung"
+  },
+  {
+    "content": "Knowing your own darkness is the best method for dealing with the darknesses of other people.",
+    "author": "Carl Jung"
+  },
+  {
+    "content": "The shoe that fits one person pinches another; there is no recipe for living that suits all cases.",
+    "author": "Carl Jung"
+  },
+  {
+    "content": "Everything that irritates us about others can lead us to an understanding of ourselves.",
+    "author": "Carl Jung"
+  },
+  {
+    "content": "Loneliness does not come from having no people about one, but from being unable to communicate the things that seem important to oneself.",
+    "author": "Carl Jung"
+  },
+  {
+    "content": "The most terrifying thing is to accept oneself completely.",
+    "author": "Carl Jung"
+  },
+  {
+    "content": "Think twice before you speak, because your words and influence will plant the seed of either success or failure in the mind of another.",
+    "author": "Napoleon Hill"
+  },
+  {
+    "content": "Whatever the mind can conceive and believe, it can achieve.",
+    "author": "Napoleon Hill"
+  },
+  {
+    "content": "It is literally true that you can succeed best and quickest by helping others to succeed.",
+    "author": "Napoleon Hill"
+  },
+  {
+    "content": "Patience, persistence and perspiration make an unbeatable combination for success.",
+    "author": "Napoleon Hill"
+  },
+  {
+    "content": "Strengthen the weak until they become strong. Then they can help themselves.",
+    "author": "Napoleon Hill"
+  },
+  {
+    "content": "Don't wait. The time will never be just right.",
+    "author": "Napoleon Hill"
+  },
+  {
+    "content": "Create a definite plan for carrying out your desire and begin at once, whether you ready or not, to put this plan into action.",
+    "author": "Napoleon Hill"
+  },
+  {
+    "content": "Your big opportunity may be right where you are now.",
+    "author": "Napoleon Hill"
+  },
+  {
+    "content": "First, have a definite, clear practical ideal; a goal, an objective. Second, have the necessary means to achieve your ends; wisdom, money, materials, and methods. Third, adjust all your means to that end.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "Happiness depends upon ourselves.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "Educating the mind without educating the heart is no education at all.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "It is not enough to win a war; it is more important to organize the peace.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "The energy of the mind is the essence of life.",
+    "author": "Aristotle"
+  },
+  {
+    "content": "What we do now echoes in eternity.",
+    "author": "Marcus Aurelius"
+  },
+  {
+    "content": "The happiness of your life depends upon the quality of your thoughts.",
+    "author": "Marcus Aurelius"
+  },
+  {
+    "content": "You have power over your mind — not outside events. Realize this, and you will find strength.",
+    "author": "Marcus Aurelius"
+  },
+  {
+    "content": "Waste no more time arguing about what a good man should be. Be one.",
+    "author": "Marcus Aurelius"
+  },
+  {
+    "content": "The soul becomes dyed with the color of its thoughts.",
+    "author": "Marcus Aurelius"
+  },
+  {
+    "content": "The best revenge is to be unlike him who performed the injury.",
+    "author": "Marcus Aurelius"
+  },
+  {
+    "content": "Accept the things to which fate binds you, and love the people with whom fate brings you together, but do so with all your heart.",
+    "author": "Marcus Aurelius"
+  },
+  {
+    "content": "If you are distressed by anything external, the pain is not due to the thing itself, but to your estimate of it; and this you have the power to revoke at any moment.",
+    "author": "Marcus Aurelius"
+  },
+  {
+    "content": "It never ceases to amaze me: we all love ourselves more than other people, but care more about their opinion than our own.",
+    "author": "Marcus Aurelius"
+  },
+  {
+    "content": "The impediment to action advances action. What stands in the way becomes the way.",
+    "author": "Marcus Aurelius"
+  },
+  {
+    "content": "疾风知劲草，板荡识诚臣。",
+    "author": "李世民"
+  },
+  {
+    "content": "千淘万漉虽辛苦，吹尽狂沙始到金。",
+    "author": "刘禹锡"
+  },
+  {
+    "content": "时人不识凌云木，直待凌云始道高。",
+    "author": "杜荀鹤"
+  },
+  {
+    "content": "采得百花成蜜后，为谁辛苦为谁甜。",
+    "author": "罗隐"
+  },
+  {
+    "content": "生当作人杰，死亦为鬼雄。",
+    "author": "李清照"
+  },
+  {
+    "content": "昨夜西风凋碧树，独上高楼，望尽天涯路。",
+    "author": "晏殊"
+  },
+  {
+    "content": "衣带渐宽终不悔，为伊消得人憔悴。",
+    "author": "柳永"
+  },
+  {
+    "content": "众里寻他千百度，蓦然回首，那人却在灯火阑珊处。",
+    "author": "辛弃疾"
+  },
+  {
+    "content": "少年不识愁滋味，爱上层楼。",
+    "author": "辛弃疾"
+  },
+  {
+    "content": "了却君王天下事，赢得生前身后名。",
+    "author": "辛弃疾"
+  },
+  {
+    "content": "黄沙百战穿金甲，不破楼兰终不还。",
+    "author": "王昌龄"
+  },
+  {
+    "content": "但使龙城飞将在，不教胡马度阴山。",
+    "author": "王昌龄"
+  },
+  {
+    "content": "独在异乡为异客，每逢佳节倍思亲。",
+    "author": "王维"
+  },
+  {
+    "content": "劝君更尽一杯酒，西出阳关无故人。",
+    "author": "王维"
+  },
+  {
+    "content": "行到水穷处，坐看云起时。",
+    "author": "王维"
+  },
+  {
+    "content": "海内存知己，天涯若比邻。",
+    "author": "王勃"
+  },
+  {
+    "content": "落霞与孤鹜齐飞，秋水共长天一色。",
+    "author": "王勃"
+  },
+  {
+    "content": "春蚕到死丝方尽，蜡炬成灰泪始干。",
+    "author": "李商隐"
+  },
+  {
+    "content": "身无彩凤双飞翼，心有灵犀一点通。",
+    "author": "李商隐"
+  },
+  {
+    "content": "相见时难别亦难，东风无力百花残。",
+    "author": "李商隐"
+  },
+  {
+    "content": "同是天涯沦落人，相逢何必曾相识。",
+    "author": "白居易"
+  },
+  {
+    "content": "野火烧不尽，春风吹又生。",
+    "author": "白居易"
+  },
+  {
+    "content": "日出江花红胜火，春来江水绿如蓝。",
+    "author": "白居易"
+  },
+  {
+    "content": "人间四月芳菲尽，山寺桃花始盛开。",
+    "author": "白居易"
+  },
+  {
+    "content": "宁为玉碎，不为瓦全。",
+    "author": "《北齐书》"
+  },
+  {
+    "content": "踏遍青山人未老，风景这边独好。",
+    "author": "毛泽东"
+  },
+  {
+    "content": "雄关漫道真如铁，而今迈步从头越。",
+    "author": "毛泽东"
+  },
+  {
+    "content": "春风又绿江南岸，明月何时照我还。",
+    "author": "王安石"
+  },
+  {
+    "content": "墙角数枝梅，凌寒独自开。",
+    "author": "王安石"
+  },
+  {
+    "content": "竹外桃花三两枝，春江水暖鸭先知。",
+    "author": "苏轼"
+  },
+  {
+    "content": "不识庐山真面目，只缘身在此山中。",
+    "author": "苏轼"
+  },
+  {
+    "content": "人生如逆旅，我亦是行人。",
+    "author": "苏轼"
+  },
+  {
+    "content": "人间有味是清欢。",
+    "author": "苏轼"
+  },
+  {
+    "content": "此心安处是吾乡。",
+    "author": "苏轼"
+  },
+  {
+    "content": "腹有诗书气自华。",
+    "author": "苏轼"
+  },
+  {
+    "content": "读书不觉已春深，一寸光阴一寸金。",
+    "author": "王贞白"
+  },
+  {
+    "content": "及时当勉励，岁月不待人。",
+    "author": "陶渊明"
+  },
+  {
+    "content": "采菊东篱下，悠然见南山。",
+    "author": "陶渊明"
+  },
+  {
+    "content": "盛年不重来，一日难再晨。",
+    "author": "陶渊明"
+  },
+  {
+    "content": "不戚戚于贫贱，不汲汲于富贵。",
+    "author": "陶渊明"
+  },
+  {
+    "content": "路遥知马力，日久见人心。",
+    "author": "《增广贤文》"
+  },
+  {
+    "content": "长江后浪推前浪，世上新人赶旧人。",
+    "author": "《增广贤文》"
+  },
+  {
+    "content": "良药苦口利于病，忠言逆耳利于行。",
+    "author": "《增广贤文》"
+  },
+  {
+    "content": "相逢好似初相识，到老终无怨恨心。",
+    "author": "《增广贤文》"
+  },
+  {
+    "content": "有意栽花花不发，无心插柳柳成荫。",
+    "author": "《增广贤文》"
+  },
+  {
+    "content": "流水不腐，户枢不蠹。",
+    "author": "《吕氏春秋》"
+  },
+  {
+    "content": "石可破也，而不可夺坚；丹可磨也，而不可夺赤。",
+    "author": "《吕氏春秋》"
+  },
+  {
+    "content": "欲加之罪，何患无辞。",
+    "author": "《左传》"
+  },
+  {
+    "content": "居安思危，思则有备，有备无患。",
+    "author": "《左传》"
+  },
+  {
+    "content": "从善如登，从恶如崩。",
+    "author": "《国语》"
+  },
+  {
+    "content": "We choose to go to the moon not because they are easy, but because they are hard.",
+    "author": "John F. Kennedy"
+  },
+  {
+    "content": "Ask not what your country can do for you — ask what you can do for your country.",
+    "author": "John F. Kennedy"
+  },
+  {
+    "content": "Things do not happen. Things are made to happen.",
+    "author": "John F. Kennedy"
+  },
+  {
+    "content": "The best executive is the one who has sense enough to pick good men.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "content": "Far and away the best prize that life offers is the chance to work hard at work worth doing.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "content": "Freedom from effort in the present merely means that there has been effort stored up in the past.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "content": "A day without laughter is a day wasted.",
+    "author": "Charlie Chaplin"
+  },
+  {
+    "content": "Hope is the thing with feathers that perches in the soul.",
+    "author": "Emily Dickinson"
+  },
+  {
+    "content": "Life can only be understood backwards; but it must be lived forwards.",
+    "author": "Kierkegaard"
+  },
+  {
+    "content": "To dare is to lose ones footing momentarily. Not to dare is to lose oneself.",
+    "author": "Kierkegaard"
+  },
+  {
+    "content": "The most common form of despair is not being who you are.",
+    "author": "Kierkegaard"
+  },
+  {
+    "content": "I think, therefore I am.",
+    "author": "Rene Descartes"
+  },
+  {
+    "content": "It is not enough to have a good mind; the main thing is to use it well.",
+    "author": "Rene Descartes"
+  },
+  {
+    "content": "Divide each difficulty into as many parts as is feasible to resolve it.",
+    "author": "Rene Descartes"
+  },
+  {
+    "content": "Freedom is what you do with what has been done to you.",
+    "author": "Jean-Paul Sartre"
+  },
+  {
+    "content": "We are our choices.",
+    "author": "Jean-Paul Sartre"
+  },
+  {
+    "content": "He who has a why to live can bear almost any how.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "content": "That which does not kill us makes us stronger.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "content": "Without music, life would be a mistake.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "content": "The doer alone learneth.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "content": "One must still have chaos in oneself to give birth to a dancing star.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "content": "The secret for harvesting from existence is to live dangerously.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "content": "Man is something that shall be overcome.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "content": "Death is not the greatest loss. The greatest loss is what dies inside us while we live.",
+    "author": "Norman Cousins"
+  },
+  {
+    "content": "The only thing necessary for the triumph of evil is for good men to do nothing.",
+    "author": "Edmund Burke"
+  },
+  {
+    "content": "The greatest mistake you can make is to be continually fearing you will make one.",
+    "author": "Elbert Hubbard"
+  },
+  {
+    "content": "A friend is someone who knows all about you and still loves you.",
+    "author": "Elbert Hubbard"
+  },
+  {
+    "content": "Do not take life too seriously. You will never get out of it alive.",
+    "author": "Elbert Hubbard"
+  },
+  {
+    "content": "The people who get on in this world are the people who get up and look for the circumstances they want.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "content": "Life isnt about finding yourself. Life is about creating yourself.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "content": "Progress is impossible without change, and those who cannot change their minds cannot change anything.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "content": "Imagination is the beginning of creation.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "content": "A life spent making mistakes is more useful than a life spent doing nothing.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "content": "We do not stop playing because we grow old; we grow old because we stop playing.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "content": "Some men see things as they are, and say why. I dream of things that never were, and say why not.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "content": "Those who cannot change their minds cannot change anything.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "content": "Success does not consist in never making mistakes but in never making the same one a second time.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "content": "A ship in harbor is safe — but that is not what ships are built for.",
+    "author": "John A. Shedd"
+  },
+  {
+    "content": "The biggest risk is not taking any risk.",
+    "author": "Mark Zuckerberg"
+  },
+  {
+    "content": "Done is better than perfect.",
+    "author": "Sheryl Sandberg"
+  },
+  {
+    "content": "Leadership is about making others better as a result of your presence.",
+    "author": "Sheryl Sandberg"
+  },
+  {
+    "content": "The question isnt who is going to let me; it is who is going to stop me.",
+    "author": "Ayn Rand"
+  },
+  {
+    "content": "The smallest minority on earth is the individual.",
+    "author": "Ayn Rand"
+  },
+  {
+    "content": "A creative man is motivated by the desire to achieve, not by the desire to beat others.",
+    "author": "Ayn Rand"
+  },
+  {
+    "content": "In three words I can sum up everything I have learned about life: it goes on.",
+    "author": "Robert Frost"
+  },
+  {
+    "content": "The woods are lovely, dark and deep, but I have promises to keep, and miles to go before I sleep.",
+    "author": "Robert Frost"
+  },
+  {
+    "content": "Two roads diverged in a wood, and I took the one less traveled by.",
+    "author": "Robert Frost"
+  },
+  {
+    "content": "Nothing gold can stay.",
+    "author": "Robert Frost"
+  },
+  {
+    "content": "The best way out is always through.",
+    "author": "Robert Frost"
+  },
+  {
+    "content": "Knowledge is power.",
+    "author": "Francis Bacon"
+  },
+  {
+    "content": "Some books are to be tasted, others to be swallowed, and some few to be chewed and digested.",
+    "author": "Francis Bacon"
+  },
+  {
+    "content": "By failing to prepare, you are preparing to fail.",
+    "author": "Benjamin Franklin"
+  },
+  {
+    "content": "Tell me and I forget, teach me and I remember, involve me and I learn.",
+    "author": "Benjamin Franklin"
+  },
+  {
+    "content": "Lost time is never found again.",
+    "author": "Benjamin Franklin"
+  },
+  {
+    "content": "Early to bed and early to rise makes a man healthy, wealthy, and wise.",
+    "author": "Benjamin Franklin"
+  },
+  {
+    "content": "An investment in knowledge pays the best interest.",
+    "author": "Benjamin Franklin"
+  },
+  {
+    "content": "The best preparation for tomorrow is doing your best today.",
+    "author": "H. Jackson Brown Jr."
+  },
+  {
+    "content": "Opportunity is missed by most people because it is dressed in overalls and looks like work.",
+    "author": "Thomas Edison"
+  },
+  {
+    "content": "Nearly every man who develops an idea works it up to the point where it looks impossible, and then he gets discouraged. That is not the place to become discouraged.",
+    "author": "Thomas Edison"
+  },
+  {
+    "content": "Restlessness is discontent and discontent is the first necessity of progress.",
+    "author": "Thomas Edison"
+  },
+  {
+    "content": "There is far more opportunity than there is ability.",
+    "author": "Thomas Edison"
+  },
+  {
+    "content": "To have a great idea, have a lot of them.",
+    "author": "Thomas Edison"
+  },
+  {
+    "content": "Nonviolence is the greatest force at the disposal of mankind.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "The good man is the friend of all living things.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "In a gentle way, you can shake the world.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "Almost everything you do will seem insignificant, but it is important that you do it.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "The best way to find yourself is to lose yourself in the service of others.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "content": "Work gives you meaning and purpose and life is empty without it.",
+    "author": "Stephen Hawking"
+  },
+  {
+    "content": "However difficult life may seem, there is always something you can do and succeed at.",
+    "author": "Stephen Hawking"
+  },
+  {
+    "content": "Intelligence is the ability to adapt to change.",
+    "author": "Stephen Hawking"
+  },
+  {
+    "content": "Look up at the stars and not down at your feet. Try to make sense of what you see.",
+    "author": "Stephen Hawking"
+  },
+  {
+    "content": "Quiet people have the loudest minds.",
+    "author": "Stephen Hawking"
+  },
+  {
+    "content": "We are just an advanced breed of monkeys on a minor planet of a very average star.",
+    "author": "Stephen Hawking"
+  },
+  {
+    "content": "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.",
+    "author": "Stephen Hawking"
+  },
+  {
+    "content": "Life would be tragic if it weren not funny.",
+    "author": "Stephen Hawking"
+  },
+  {
+    "content": "People who boast about their IQ are losers.",
+    "author": "Stephen Hawking"
+  },
+  {
+    "content": "Not everything that counts can be counted, and not everything that can be counted counts.",
+    "author": "William Bruce Cameron"
+  },
+  {
+    "content": "If your ship does not come in, swim out to it.",
+    "author": "佚名"
+  },
+  {
+    "content": "The best view comes after the hardest climb.",
+    "author": "佚名"
+  },
+  {
+    "content": "The past cannot be changed. The future is yet in your power.",
+    "author": "佚名"
+  },
+  {
+    "content": "Success is walking from failure to failure with no loss of enthusiasm.",
+    "author": "Winston Churchill"
+  }
+]

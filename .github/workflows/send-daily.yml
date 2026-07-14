@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 设置 Node.js
         uses: actions/setup-node@v4
@@ -34,7 +36,17 @@ jobs:
           BREVO_SENDER_NAME: 每日心语
         run: npx tsx src/gh-send.ts
 
-      - name: 发送结果通知
+      - name: 💾 保存发送历史（30天不重复追踪）
+        if: always()
+        run: |
+          git config user.name "每日心语 Bot"
+          git config user.email "bot@daily-motivation.com"
+          git add data/sent_history.json
+          git diff --staged --quiet || git commit -m "📝 更新发送历史 $(date '+%Y-%m-%d %H:%M')"
+          git pull --rebase origin main
+          git push
+
+      - name: 完成通知
         if: always()
         run: |
           echo "✅ 每日心语发送任务完成"
