@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📬 每日心语 - 在线管理</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif;background:#f5f7fa;color:#333;line-height:1.6;padding:20px}
+.container{max-width:800px;margin:0 auto}
+.header{background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;padding:24px 30px;color:#fff;margin-bottom:20px}
+.header h1{font-size:22px}
+.header p{font-size:13px;opacity:.85;margin-top:4px}
+.card{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);margin-bottom:16px;overflow:hidden}
+.card-header{padding:14px 20px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center}
+.card-header h2{font-size:15px;font-weight:600}
+.card-body{padding:16px 20px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:#f9fafb;padding:10px 12px;text-align:left;font-weight:600;font-size:12px;color:#666;border-bottom:1px solid #e5e7eb}
+td{padding:10px 12px;border-bottom:1px solid #f3f4f6}
+tr:hover td{background:#f9fafb}
+input,select{padding:8px 12px;border:1px solid #d1d5db;border-radius:6px;font-size:14px;width:100%;outline:none;transition:border-color .2s}
+input:focus{border-color:#667eea;box-shadow:0 0 0 3px rgba(102,126,234,.15)}
+.btn{padding:8px 16px;border:none;border-radius:6px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:4px}
+.btn-primary{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff}
+.btn-primary:hover{opacity:.9}
+.btn-sm{padding:4px 10px;font-size:12px}
+.btn-danger{background:#fee2e2;color:#dc2626}
+.btn-danger:hover{background:#fecaca}
+.btn-outline{background:#fff;color:#555;border:1px solid #d1d5db}
+.btn-outline:hover{background:#f9fafb}
+.toast{position:fixed;top:16px;right:16px;padding:12px 20px;border-radius:8px;font-size:14px;z-index:999;animation:slideIn .3s ease;max-width:380px}
+.toast.success{background:#d1fae5;color:#065f46;border-left:4px solid #10b981}
+.toast.error{background:#fce4ec;color:#c62828;border-left:4px solid #ef4444}
+.toast.info{background:#eef1ff;color:#5a6fd6;border-left:4px solid #667eea}
+@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-group{display:flex;flex-direction:column;gap:4px}
+.form-group label{font-size:13px;font-weight:500;color:#555}
+.form-actions{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:500}
+.badge-active{background:#d1fae5;color:#065f46}
+.badge-inactive{background:#fef3c7;color:#92400e}
+.login-section{text-align:center;padding:40px 20px}
+.login-section p{color:#888;margin:8px 0 16px;font-size:14px}
+.status{display:flex;align-items:center;gap:6px;font-size:13px;color:#888;margin-top:8px}
+.status-dot{width:8px;height:8px;border-radius:50%}
+.status-dot.online{background:#10b981}
+.status-dot.offline{background:#ef4444}
+.commit-info{font-size:11px;color:#999;margin-top:4px}
+.empty-state{text-align:center;padding:32px;color:#aaa;font-size:14px}
+</style>
+</head>
+<body>
+<div class="container" id="app">
+  <div class="header">
+    <h1>📬 每日心语 · 在线管理</h1>
+    <p>收件人数据存储在 GitHub 仓库，修改后自动保存</p>
+  </div>
+
+  <!-- Login -->
+  <div class="card" id="loginSection">
+    <div class="card-body login-section">
+      <h2 style="font-size:18px;margin-bottom:4px">🔑 连接 GitHub</h2>
+      <p>输入你的 GitHub Personal Access Token 来管理收件人</p>
+      <div style="max-width:400px;margin:0 auto">
+        <input type="password" id="tokenInput" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" style="margin-bottom:10px" />
+        <button class="btn btn-primary" onclick="connect()" style="width:100%;justify-content:center">连接</button>
+      </div>
+      <div style="margin-top:16px;font-size:12px;color:#999">
+        Token 仅保存在当前浏览器会话中，不会上传到任何服务器
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div id="mainSection" style="display:none">
+    <!-- Status bar -->
+    <div class="card" style="padding:12px 20px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <div class="status">
+          <span class="status-dot online"></span>
+          <span>已连接 <span id="repoInfo"></span></span>
+          <span style="color:#d1d5db;margin:0 8px">|</span>
+          <span>收件人: <strong id="countDisplay">0</strong> 人</span>
+          <span style="color:#d1d5db;margin:0 8px">|</span>
+          <span class="commit-info">最新提交: <span id="lastCommit">-</span></span>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="disconnect()">断开</button>
+      </div>
+    </div>
+
+    <!-- Add form -->
+    <div class="card">
+      <div class="card-header">
+        <h2>➕ 添加收件人</h2>
+      </div>
+      <div class="card-body">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>姓名</label>
+            <input type="text" id="newName" placeholder="例: Zhang San" />
+          </div>
+          <div class="form-group">
+            <label>邮箱</label>
+            <input type="email" id="newEmail" placeholder="例: zhangsan@company.com" />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" onclick="addRecipient()">➕ 添加</button>
+          <button class="btn btn-outline btn-sm" onclick="syncFromGitHub()" id="syncBtn">🔄 刷新</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recipient list -->
+    <div class="card">
+      <div class="card-header">
+        <h2>👥 收件人列表</h2>
+        <span class="badge badge-active" id="totalBadge">0 人</span>
+      </div>
+      <div class="card-body" style="padding:0">
+        <table>
+          <thead>
+            <tr><th>姓名</th><th>邮箱</th><th>状态</th><th style="width:120px">操作</th></tr>
+          </thead>
+          <tbody id="recipientList"></tbody>
+        </table>
+        <div class="empty-state" id="emptyState">暂无收件人，在上方添加</div>
+      </div>
+    </div>
+
+    <!-- Commit & push -->
+    <div class="card">
+      <div class="card-body" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <div>
+          <div style="font-size:13px;color:#666">每次修改会自动提交到 GitHub，下次定时发送会自动生效</div>
+          <div class="commit-info" id="unsavedInfo">✅ 全部已保存</div>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="saveAll()" id="saveBtn" style="display:none">💾 保存修改</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== State =====
+const REPO = 'Harryngb/daily-motivation';
+const FILE_PATH = 'recipients.json';
+const BRANCH = 'main';
+
+let token = '';
+let recipients = [];
+let originalSha = '';
+let hasChanges = false;
+
+// ===== GitHub API =====
+async function ghapi(method, path, body) {
+  const opts = {
+    method,
+    headers: {
+      Authorization: `token ${token}`,
+      Accept: 'application/vnd.github.v3+json',
+    },
+  };
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(`https://api.github.com${path}`, opts);
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.message || `HTTP ${res.status}`);
+  return data;
+}
+
+// ===== Toast =====
+function toast(msg, type = 'info') {
+  const t = document.createElement('div');
+  t.className = `toast ${type}`;
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 3000);
+}
+
+// ===== Connect =====
+function connect() {
+  token = document.getElementById('tokenInput').value.trim();
+  if (!token) { toast('请输入 Token', 'error'); return; }
+  loadData();
+}
+
+function disconnect() {
+  token = '';
+  recipients = [];
+  document.getElementById('tokenInput').value = '';
+  document.getElementById('loginSection').style.display = 'block';
+  document.getElementById('mainSection').style.display = 'none';
+}
+
+// ===== Load Data =====
+async function loadData() {
+  try {
+    const data = await ghapi('GET', `/repos/${REPO}/contents/${FILE_PATH}?ref=${BRANCH}`);
+    originalSha = data.sha;
+    const content = atob(data.content);
+    recipients = JSON.parse(content);
+    render();
+    document.getElementById('loginSection').style.display = 'none';
+    document.getElementById('mainSection').style.display = 'block';
+    document.getElementById('repoInfo').textContent = REPO;
+    document.getElementById('lastCommit').textContent = new Date().toLocaleString('zh-CN');
+    hasChanges = false;
+    updateSaveBtn();
+    toast('✅ 已连接，已加载 ' + recipients.length + ' 位收件人', 'success');
+  } catch (err) {
+    toast('连接失败: ' + err.message, 'error');
+  }
+}
+
+// ===== Save to GitHub =====
+async function saveAll() {
+  if (!hasChanges) return;
+  try {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(recipients, null, 2))));
+    const data = await ghapi('PUT', `/repos/${REPO}/contents/${FILE_PATH}`, {
+      message: '✏️ 更新收件人列表',
+      content,
+      sha: originalSha,
+      branch: BRANCH,
+    });
+    originalSha = data.content.sha;
+    hasChanges = false;
+    updateSaveBtn();
+    document.getElementById('lastCommit').textContent = new Date().toLocaleString('zh-CN');
+    toast('✅ 已保存到 GitHub，下次定时发送自动生效', 'success');
+  } catch (err) {
+    // Try to handle conflict - reload
+    if (err.message.includes('sha') || err.message.includes('conflict')) {
+      toast('⚠️ 仓库内容已被其他操作修改，正在重新加载...', 'error');
+      await loadData();
+      return;
+    }
+    toast('保存失败: ' + err.message, 'error');
+  }
+}
+
+// ===== Mark as changed =====
+function markChanged() {
+  hasChanges = true;
+  updateSaveBtn();
+}
+
+function updateSaveBtn() {
+  const btn = document.getElementById('saveBtn');
+  const info = document.getElementById('unsavedInfo');
+  if (hasChanges) {
+    btn.style.display = 'inline-flex';
+    info.textContent = '⚠️ 有未保存的修改';
+    info.style.color = '#f59e0b';
+  } else {
+    btn.style.display = 'none';
+    info.textContent = '✅ 全部已保存';
+    info.style.color = '#999';
+  }
+}
+
+// ===== Add Recipient =====
+async function addRecipient() {
+  const name = document.getElementById('newName').value.trim();
+  const email = document.getElementById('newEmail').value.trim();
+  if (!name || !email) { toast('请填写姓名和邮箱', 'error'); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { toast('邮箱格式不正确', 'error'); return; }
+  if (recipients.some(r => r.email.toLowerCase() === email.toLowerCase())) {
+    toast('该邮箱已存在', 'error');
+    return;
+  }
+
+  recipients.push({ name, email, active: true });
+  document.getElementById('newName').value = '';
+  document.getElementById('newEmail').value = '';
+  markChanged();
+  render();
+  toast('已添加 ' + name, 'success');
+
+  // Auto-save
+  await saveAll();
+}
+
+// ===== Edit Recipient =====
+function toggleActive(index) {
+  recipients[index].active = !recipients[index].active;
+  markChanged();
+  render();
+}
+
+function deleteRecipient(index) {
+  const name = recipients[index].name;
+  if (!confirm(`确定要删除 ${name} 吗？`)) return;
+  recipients.splice(index, 1);
+  markChanged();
+  render();
+  saveAll();
+}
+
+// ===== Reorder =====
+function moveUp(index) {
+  if (index === 0) return;
+  [recipients[index - 1], recipients[index]] = [recipients[index], recipients[index - 1]];
+  markChanged();
+  render();
+}
+
+function moveDown(index) {
+  if (index >= recipients.length - 1) return;
+  [recipients[index], recipients[index + 1]] = [recipients[index + 1], recipients[index]];
+  markChanged();
+  render();
+}
+
+// ===== Sync from GitHub =====
+async function syncFromGitHub() {
+  if (hasChanges && !confirm('当前有未保存的修改，刷新会丢失。确定吗？')) return;
+  await loadData();
+  toast('已刷新', 'info');
+}
+
+// ===== Render =====
+function render() {
+  const tbody = document.getElementById('recipientList');
+  const empty = document.getElementById('emptyState');
+  const countDisplay = document.getElementById('countDisplay');
+  const totalBadge = document.getElementById('totalBadge');
+
+  const active = recipients.filter(r => r.active !== false);
+  countDisplay.textContent = `${active.length}/${recipients.length}`;
+  totalBadge.textContent = `${recipients.length} 人`;
+
+  if (recipients.length === 0) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  tbody.innerHTML = recipients.map((r, i) => `
+    <tr>
+      <td><strong>${esc(r.name)}</strong></td>
+      <td style="color:#666;font-size:13px">${esc(r.email)}</td>
+      <td>
+        <span class="badge ${r.active !== false ? 'badge-active' : 'badge-inactive'}"
+              onclick="toggleActive(${i})" style="cursor:pointer">
+          ${r.active !== false ? '✅ 活跃' : '⏸ 停用'}
+        </span>
+      </td>
+      <td>
+        <button class="btn btn-sm btn-outline" onclick="moveUp(${i})" ${i === 0 ? 'disabled style="opacity:.3"' : ''}>↑</button>
+        <button class="btn btn-sm btn-outline" onclick="moveDown(${i})" ${i >= recipients.length - 1 ? 'disabled style="opacity:.3"' : ''}>↓</button>
+        <button class="btn btn-sm btn-danger" onclick="deleteRecipient(${i})">🗑</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function esc(s) {
+  if (!s) return '';
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+// ===== Keyboard shortcut =====
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    const name = document.getElementById('newName');
+    const email = document.getElementById('newEmail');
+    if (document.activeElement === name || document.activeElement === email) {
+      addRecipient();
+    }
+  }
+});
+
+// Check URL for token
+const urlParams = new URLSearchParams(window.location.search);
+const urlToken = urlParams.get('token');
+if (urlToken) {
+  document.getElementById('tokenInput').value = urlToken;
+}
+</script>
+</body>
+</html>

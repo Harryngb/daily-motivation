@@ -10,23 +10,18 @@ const BREVO_API_KEY = process.env.BREVO_API_KEY || '';
 const BREVO_SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL || '';
 const BREVO_SENDER_NAME = process.env.BREVO_SENDER_NAME || '每日心语';
 
-// ===== 收件人列表 =====
-const RECIPIENTS = [
-  { name: 'Harry Shen', email: 'hashen@nvisionglobal.com' },
-  { name: 'James Hong', email: 'jhong@nvisionglobal.com' },
-  { name: 'Jesse Zhang', email: 'jesse.zhang@nvisionglobal.com' },
-  { name: 'Cathy Xue', email: 'cxue@nvisionglobal.com' },
-  { name: 'Sandra Zheng', email: 'szheng@nvisionglobal.com' },
-  { name: 'Lucia Liu', email: 'lliu@nvisionglobal.com' },
-  { name: 'Candy Tang', email: 'ctang@nvisionglobal.com' },
-  { name: 'Daisy Lu', email: 'dlu@nvisionglobal.com' },
-  { name: 'Annice Xu', email: 'axu@nvisionglobal.com' },
-  { name: 'Ada Hu', email: 'ahu@nvisionglobal.com' },
-  { name: 'Daphne Chen', email: 'daphne.chen@nvisionglobal.com' },
-  { name: 'Bella Li', email: 'Bella.li@nvisionglobal.com' },
-  { name: 'Carmen Zhang', email: 'carmen.zhang@nvisionglobal.com' },
-  { name: 'Mia Chen', email: 'mia.chen@nvisionglobal.com' },
-];
+// ===== 收件人列表（从 recipients.json 读取）=====
+import * as fs from 'fs';
+import * as path from 'path';
+const RECIPIENTS: { name: string; email: string; active?: boolean }[] = (() => {
+  try {
+    const p = path.join(__dirname, '..', 'recipients.json');
+    const data = JSON.parse(fs.readFileSync(p, 'utf-8'));
+    return Array.isArray(data) ? data.filter((r: any) => r.active !== false) : [];
+  } catch {
+    return [];
+  }
+})();
 
 // ===== 内置语录（冷启动和降级备用）=====
 const BUILT_IN_QUOTES: { content: string; author: string }[] = [
