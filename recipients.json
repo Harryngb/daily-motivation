@@ -20,16 +20,6 @@
     "active": true
   },
   {
-    "name": "Candy Tang",
-    "email": "ctang@nvisionglobal.com",
-    "active": false
-  },
-  {
-    "name": "Daisy Lu",
-    "email": "dlu@nvisionglobal.com",
-    "active": false
-  },
-  {
     "name": "Annice Xu",
     "email": "axu@nvisionglobal.com",
     "active": true
