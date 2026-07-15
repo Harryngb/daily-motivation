@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: 检出代码
         uses: actions/checkout@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 设置 Node.js
         uses: actions/setup-node@v5
@@ -37,11 +35,6 @@ jobs:
           if [ -z "$BREVO_SENDER_EMAIL" ]; then echo "❌ BREVO_SENDER_EMAIL 未设置"; exit 1; fi
           echo "✅ 环境变量检查通过"
 
-      - name: 确保发送历史文件存在
-        run: |
-          mkdir -p data
-          if [ ! -f data/sent_history.json ]; then echo '{}' > data/sent_history.json; fi
-
       - name: 📧 发送每日心语
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
@@ -49,22 +42,7 @@ jobs:
           BREVO_SENDER_NAME: 每日心语
         run: npx tsx src/gh-send.ts
 
-      - name: 💾 保存发送历史
-        if: always()
-        run: |
-          git config user.name "每日心语 Bot"
-          git config user.email "bot@daily-motivation.com"
-          git add data/sent_history.json
-          if ! git diff --staged --quiet; then
-            git commit -m "📝 更新发送历史 $(date '+%Y-%m-%d %H:%M')"
-            git pull --rebase origin main || true
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
-          else
-            echo "📝 发送历史无变化，跳过提交"
-          fi
-
       - name: ✅ 完成通知
-        if: always()
         run: |
           echo "========================================"
           echo "  ✅ 每日心语发送任务完成"
