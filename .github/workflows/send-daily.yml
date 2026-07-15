@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: '0 0,9 * * *'
   workflow_dispatch:
+  repository_dispatch:
+    types: [send-daily]
 
 jobs:
   send:
