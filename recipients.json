@@ -1,16 +1,72 @@
 [
-  { "name": "Harry Shen", "email": "hashen@nvisionglobal.com", "active": true },
-  { "name": "James Hong", "email": "jhong@nvisionglobal.com", "active": true },
-  { "name": "Jesse Zhang", "email": "jesse.zhang@nvisionglobal.com", "active": true },
-  { "name": "Cathy Xue", "email": "cxue@nvisionglobal.com", "active": true },
-  { "name": "Sandra Zheng", "email": "szheng@nvisionglobal.com", "active": true },
-  { "name": "Lucia Liu", "email": "lliu@nvisionglobal.com", "active": true },
-  { "name": "Candy Tang", "email": "ctang@nvisionglobal.com", "active": true },
-  { "name": "Daisy Lu", "email": "dlu@nvisionglobal.com", "active": true },
-  { "name": "Annice Xu", "email": "axu@nvisionglobal.com", "active": true },
-  { "name": "Ada Hu", "email": "ahu@nvisionglobal.com", "active": true },
-  { "name": "Daphne Chen", "email": "daphne.chen@nvisionglobal.com", "active": true },
-  { "name": "Bella Li", "email": "Bella.li@nvisionglobal.com", "active": true },
-  { "name": "Carmen Zhang", "email": "carmen.zhang@nvisionglobal.com", "active": true },
-  { "name": "Mia Chen", "email": "mia.chen@nvisionglobal.com", "active": true }
+  {
+    "name": "Harry Shen",
+    "email": "hashen@nvisionglobal.com",
+    "active": true
+  },
+  {
+    "name": "James Hong",
+    "email": "jhong@nvisionglobal.com",
+    "active": false
+  },
+  {
+    "name": "Jesse Zhang",
+    "email": "jesse.zhang@nvisionglobal.com",
+    "active": true
+  },
+  {
+    "name": "Cathy Xue",
+    "email": "cxue@nvisionglobal.com",
+    "active": true
+  },
+  {
+    "name": "Sandra Zheng",
+    "email": "szheng@nvisionglobal.com",
+    "active": true
+  },
+  {
+    "name": "Lucia Liu",
+    "email": "lliu@nvisionglobal.com",
+    "active": false
+  },
+  {
+    "name": "Candy Tang",
+    "email": "ctang@nvisionglobal.com",
+    "active": false
+  },
+  {
+    "name": "Daisy Lu",
+    "email": "dlu@nvisionglobal.com",
+    "active": false
+  },
+  {
+    "name": "Annice Xu",
+    "email": "axu@nvisionglobal.com",
+    "active": true
+  },
+  {
+    "name": "Ada Hu",
+    "email": "ahu@nvisionglobal.com",
+    "active": true
+  },
+  {
+    "name": "Daphne Chen",
+    "email": "daphne.chen@nvisionglobal.com",
+    "active": false
+  },
+  {
+    "name": "Bella Li",
+    "email": "Bella.li@nvisionglobal.com",
+    "active": true
+  },
+  {
+    "name": "Carmen Zhang",
+    "email": "carmen.zhang@nvisionglobal.com",
+    "active": true
+  },
+  {
+    "name": "Mia Chen",
+    "email": "mia.chen@nvisionglobal.com",
+    "active": true
+  }
 ]
