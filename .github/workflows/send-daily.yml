@@ -3,7 +3,7 @@ name: 📬 每日心语自动发送
 on:
   schedule:
     - cron: '0 0 * * *'
-    - cron: '0 4 * * *'
+    - cron: '0 5 * * *'
     - cron: '0 9 * * *'
   workflow_dispatch:
 
@@ -26,25 +26,9 @@ jobs:
       - name: 安装依赖
         run: npm ci
 
-      - name: 检查环境变量
-        env:
-          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
-          BREVO_SENDER_EMAIL: ${{ secrets.BREVO_SENDER_EMAIL }}
-        run: |
-          if [ -z "$BREVO_API_KEY" ]; then echo "❌ BREVO_API_KEY 未设置"; exit 1; fi
-          if [ -z "$BREVO_SENDER_EMAIL" ]; then echo "❌ BREVO_SENDER_EMAIL 未设置"; exit 1; fi
-          echo "✅ 环境变量检查通过"
-
       - name: 📧 发送每日心语
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           BREVO_SENDER_EMAIL: ${{ secrets.BREVO_SENDER_EMAIL }}
           BREVO_SENDER_NAME: 每日心语
         run: npx tsx src/gh-send.ts
-
-      - name: ✅ 完成通知
-        run: |
-          echo "========================================"
-          echo "  ✅ 每日心语发送任务完成"
-          echo "  详情: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          echo "========================================"
