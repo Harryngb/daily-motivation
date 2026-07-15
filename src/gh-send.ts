@@ -131,7 +131,12 @@ async function fetchBatchFromAPIs(count: number): Promise<{ content: string; aut
 
 // ===== 判断时段 =====
 function getTimeLabel(): string {
-  const h = new Date().getHours();
+  const now = new Date();
+  const h = parseInt(new Intl.DateTimeFormat('zh-CN', {
+    timeZone: 'Asia/Shanghai',
+    hour: 'numeric',
+    hour12: false,
+  }).format(now), 10);
   return h < 12 ? '08:00' : '17:00';
 }
 
