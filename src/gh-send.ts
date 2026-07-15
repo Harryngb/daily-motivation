@@ -51,6 +51,7 @@ if (BUILT_IN_QUOTES.length === 0) {
 
 // ===== 30天不重复追踪（sent_history.json）=====
 const HISTORY_FILE = path.join(__dirname, '..', 'data', 'sent_history.json');
+const LAST_SEND_FILE = path.join(__dirname, '..', 'data', 'last_send.json');
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 
 interface SentRecord {
@@ -68,6 +69,21 @@ function loadSentHistory(): SentRecord {
 
 function saveSentHistory(h: SentRecord): void {
   try { fs.writeFileSync(HISTORY_FILE, JSON.stringify(h, null, 2)); } catch { /* ignore */ }
+}
+
+// ===== 防重复发送检查 =====
+function wasSlotSentToday(slot: string): boolean {
+  try {
+    if (!fs.existsSync(LAST_SEND_FILE)) return false;
+    const data = JSON.parse(fs.readFileSync(LAST_SEND_FILE, 'utf-8'));
+    const today = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+    return data.date === today && data.slot === slot;
+  } catch { return false; }
+}
+
+function markSlotSent(slot: string): void {
+  const today = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  try { fs.writeFileSync(LAST_SEND_FILE, JSON.stringify({ date: today, slot })); } catch {}
 }
 
 function cleanOldHistory(h: SentRecord): void {
@@ -280,6 +296,14 @@ async function main() {
   // 加载发送历史（30天不重复追踪）
   const sentHistory = loadSentHistory();
   cleanOldHistory(sentHistory);
+
+  // 检查是否今天这个时段已经发过（防重复触发）
+  const sendSlot = getTimeLabel();
+  if (wasSlotSentToday(sendSlot)) {
+    console.log(`⏭️ 今天 ${sendSlot} 时段已发送，跳过此次（如需强制重发请删除 data/last_send.json）`);
+    return;
+  }
+  markSlotSent(sendSlot);
 
   // 先尝试从 API 补充新鲜语录
   const apiQuotes = await fetchBatchFromAPIs(RECIPIENTS.length);
