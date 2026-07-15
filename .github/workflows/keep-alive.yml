@@ -1,0 +1,25 @@
+name: 🔄 Keep Alive
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    name: 保持仓库活跃
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🔄 更新时间戳
+        run: |
+          echo "Updated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" > .keep-alive
+          git config user.name "Keep Alive Bot"
+          git config user.email "keepalive@daily-motivation.com"
+          git add .keep-alive
+          git diff --staged --quiet || git commit -m "🔄 Keep alive $(date '+%Y-%m-%d %H:%M')"
+          git push
