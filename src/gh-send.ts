@@ -8,7 +8,7 @@
 // ===== 配置（从环境变量读取）=====
 const BREVO_API_KEY = process.env.BREVO_API_KEY || '';
 const BREVO_SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL || '';
-const BREVO_SENDER_NAME = process.env.BREVO_SENDER_NAME || '每日心语';
+const BREVO_SENDER_NAME = process.env.BREVO_SENDER_NAME || 'nVision Global Family';
 
 // ===== 收件人列表（从 recipients.json 读取）=====
 import * as fs from 'fs';
@@ -181,39 +181,52 @@ function getTimeLabel(): string {
 function buildHtml(content: string, author: string, name: string): string {
   const label = getTimeLabel();
   const emoji = label === '08:00' ? '🌅' : '🌇';
-  const greet = label === '08:00' ? '早上好' : '傍晚好';
+  const greet = label === '08:00' ? 'Good Morning' : 'Good Evening';
   return `<!DOCTYPE html>
 <html><head><meta charset="UTF-8"><style>
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif;background:#f5f7fa;color:#333;line-height:1.6}
-.container{max-width:600px;margin:0 auto;padding:20px}
-.header{background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px 12px 0 0;padding:40px 30px;text-align:center;color:#fff}
-.header h1{font-size:28px;margin-bottom:8px}.header p{color:rgba(255,255,255,0.85);font-size:14px}
-.body-card{background:#fff;border-radius:0 0 12px 12px;padding:40px 30px;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
-.greeting{font-size:16px;color:#666;margin-bottom:12px}.greeting strong{color:#667eea}
-.banner{text-align:center;font-size:15px;color:#667eea;font-weight:600;padding:8px 0 12px;letter-spacing:1px}
-.quote-wrapper{text-align:center;padding:30px 20px;margin:12px 0;background:linear-gradient(135deg,#fdf2e9,#fef9ef);border-left:4px solid #f5a623;border-radius:8px}
-.quote-content{font-size:20px;line-height:1.8;color:#2c3e50;font-weight:500;margin-bottom:16px;font-style:italic}
-.quote-author{font-size:15px;color:#888}.quote-author::before{content:'—— '}
-.footer{margin-top:30px;padding-top:20px;border-top:1px solid #eee;text-align:center}
-.footer p{font-size:13px;color:#999;margin-bottom:4px}
-.footer .tagline{color:#667eea;font-size:14px;font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman','Songti SC','SimSun',serif;background:#faf8f5;color:#2c2c2c;line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:580px;margin:0 auto;padding:20px}
+.header{background:#2c2c2c;border-radius:10px 10px 0 0;padding:36px 30px;text-align:center}
+.header h1{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:#d4a853;margin-bottom:4px}
+.header .brand{font-family:Georgia,serif;font-size:22px;color:#ffffff;font-weight:400;letter-spacing:1px}
+.body-card{background:#ffffff;border-radius:0 0 10px 10px;padding:48px 36px 36px;border:1px solid #e8e4de;border-top:none}
+.greeting{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;color:#666666;margin-bottom:28px;text-align:center}
+.greeting strong{color:#2c2c2c}
+.divider{width:50px;height:2px;background:#d4a853;margin:0 auto 32px}
+.decorative-quotes{text-align:center;font-family:Georgia,serif;font-size:42px;color:#d4a853;line-height:1;margin-bottom:-10px;opacity:0.5}
+.quote-wrapper{text-align:center;padding:8px 10px 16px;margin:0 0 24px}
+.quote-content{font-size:22px;line-height:1.7;color:#1a1a1a;margin-bottom:14px;font-style:italic;font-weight:400}
+.quote-author{font-size:14px;color:#888888;font-style:normal;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.quote-author::before{content:'\2014\00a0'}
+.insight{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#999999;text-align:center;font-style:italic;padding:0 10px 20px;border-bottom:1px solid #eeeeee;margin-bottom:24px}
+.footer{text-align:center}
+.footer .tagline{font-family:Georgia,serif;font-size:15px;color:#d4a853;font-style:italic;margin-bottom:8px;letter-spacing:0.5px}
+.footer p{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:#b0b0b0;margin-bottom:4px}
+.footer .brand-name{font-size:14px;color:#2c2c2c;font-weight:500;margin-bottom:2px}
+.footer .unsubscribe{color:#cccccc;font-size:11px;margin-top:8px}
 </style></head><body>
 <div class=container>
-<div class=header><h1>✨ 每日心语</h1><p>Daily Inspiration</p></div>
+<div class=header>
+<div class=brand>nVision Global Family</div>
+<h1>Daily Inspiration</h1>
+</div>
 <div class=body-card>
-<div class=greeting>${emoji} ${greet}，<strong>${escHtml(name)}</strong>：</div>
-<div class=banner>🎯 开开心心上班，快快乐乐下班！</div>
+<div class=greeting>${emoji} ${greet}, <strong>${escHtml(name)}</strong></div>
+<div class=divider></div>
+<div class=decorative-quotes>&ldquo;</div>
 <div class=quote-wrapper>
-<div class=quote-content>"${escHtml(content)}"</div>
+<div class=quote-content>${escHtml(content)}</div>
 <div class=quote-author>${escHtml(author)}</div>
 </div>
+<div class=insight>May this wisdom brighten your day and guide your journey.</div>
 <div class=footer>
-<p class=tagline>愿这句话为你的一天带来力量与温暖 💪</p>
-<p>—— 每日心语 · 与你同行</p>
-<p class=unsubscribe>此邮件由系统自动发送</p>
-</div></div></div></body></html>`;
+<p class=brand-name>nVision Global Family</p>
+<p class=tagline>&mdash; Together We Inspire &mdash;</p>
+<p class=unsubscribe>This email was sent by the Daily Inspiration system</p>
+</div>
+</div></div></body></html>`;
 }
-
 // ===== 通过 Brevo 发送 =====
 async function sendEmail(toName: string, toEmail: string, html: string): Promise<boolean> {
   const res = await fetch('https://api.brevo.com/v3/smtp/email', {
@@ -221,7 +234,7 @@ async function sendEmail(toName: string, toEmail: string, html: string): Promise
     body: JSON.stringify({
       sender: { name: BREVO_SENDER_NAME, email: BREVO_SENDER_EMAIL },
       to: [{ email: toEmail, name: toName }],
-      subject: `✨ 每日心语 · ${toName}，今天也要加油哦！`,
+      subject: `✨ nVision Global Family · Daily Inspiration · ${toName}`,
       htmlContent: html,
     }),
   });
@@ -257,7 +270,7 @@ async function sendReport(results: SendResult[], success: number, failed: number
     body: JSON.stringify({
       sender: { name: BREVO_SENDER_NAME, email: BREVO_SENDER_EMAIL },
       to: [{ email: 'hashen@nvisionglobal.com', name: 'Harry Shen' }],
-      subject: `📬 每日心语报告 · ${period} · ${dateStr}`,
+      subject: `📬 nVision Global Family · Daily Inspiration Report · ${period} · ${dateStr}`,
       htmlContent: `<!DOCTYPE html>
 <html><head><meta charset=UTF-8><style>
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif;background:#f5f7fa;color:#333;line-height:1.6}
