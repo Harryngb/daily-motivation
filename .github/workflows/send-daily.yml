@@ -33,6 +33,6 @@ jobs:
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           BREVO_SENDER_EMAIL: ${{ secrets.BREVO_SENDER_EMAIL }}
-          BREVO_SENDER_NAME: 每日心语
+          BREVO_SENDER_NAME: nVision Global Family
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx tsx src/gh-send.ts
