@@ -51,7 +51,6 @@ if (BUILT_IN_QUOTES.length === 0) {
 
 // ===== 30天不重复追踪（sent_history.json）=====
 const HISTORY_FILE = path.join(__dirname, '..', 'data', 'sent_history.json');
-const LAST_SEND_FILE = path.join(__dirname, '..', 'data', 'last_send.json');
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 
 interface SentRecord {
@@ -69,21 +68,6 @@ function loadSentHistory(): SentRecord {
 
 function saveSentHistory(h: SentRecord): void {
   try { fs.writeFileSync(HISTORY_FILE, JSON.stringify(h, null, 2)); } catch { /* ignore */ }
-}
-
-// ===== 防重复发送检查 =====
-function wasSlotSentToday(slot: string): boolean {
-  try {
-    if (!fs.existsSync(LAST_SEND_FILE)) return false;
-    const data = JSON.parse(fs.readFileSync(LAST_SEND_FILE, 'utf-8'));
-    const today = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
-    return data.date === today && data.slot === slot;
-  } catch { return false; }
-}
-
-function markSlotSent(slot: string): void {
-  const today = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
-  try { fs.writeFileSync(LAST_SEND_FILE, JSON.stringify({ date: today, slot })); } catch {}
 }
 
 function cleanOldHistory(h: SentRecord): void {
@@ -109,6 +93,43 @@ function wasSentIn30Days(h: SentRecord, email: string, q: { content: string; aut
 function markAsSent(h: SentRecord, email: string, q: { content: string; author: string }): void {
   if (!h[email]) h[email] = [];
   h[email].push({ quoteKey: historyKey(q), sentAt: new Date().toISOString() });
+}
+
+// ===== 防重复发送检查（通过 GitHub API 查询今天的运行记录）=====
+async function wasSlotSentTodayViaAPI(slot: string): Promise<boolean> {
+  const token = process.env.GH_TOKEN;
+  if (!token) return false;
+
+  const repo = process.env.GITHUB_REPOSITORY || 'Harryngb/daily-motivation';
+  const today = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${repo}/actions/runs?per_page=30&status=success`,
+      { headers: { 'Authorization': `token ${token}`, 'User-Agent': 'gh-send', 'Accept': 'application/vnd.github.v3+json' } }
+    );
+    if (!res.ok) return false;
+    const data = await res.json() as { workflow_runs: Array<{ run_started_at: string; event: string }> };
+
+    for (const run of (data.workflow_runs || [])) {
+      if (run.event !== 'repository_dispatch' && run.event !== 'schedule' && run.event !== 'workflow_dispatch') continue;
+
+      const runDate = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(run.run_started_at));
+      if (runDate !== today) continue;
+
+      const runHour = parseInt(new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', hour: 'numeric', hour12: false }).format(new Date(run.run_started_at)), 10);
+      const runSlot = runHour < 12 ? '08:00' : '17:00';
+
+      if (runSlot === slot) {
+        console.log(`  📋 API检查: 今天 ${slot} 时段已成功发送过 (${run.run_started_at})`);
+        return true;
+      }
+    }
+    return false;
+  } catch (err: any) {
+    console.warn(`  ⚠️ 防重复检查失败: ${err.message}，继续发送`);
+    return false;
+  }
 }
 
 // ===== 获取新鲜语录 =====
@@ -293,17 +314,18 @@ async function main() {
   if (!BREVO_API_KEY) { console.error('❌ BREVO_API_KEY 未设置'); process.exit(1); }
   if (!BREVO_SENDER_EMAIL) { console.error('❌ BREVO_SENDER_EMAIL 未设置'); process.exit(1); }
 
+  // 检查是否今天这个时段已经成功发过（通过 GitHub API，跨运行持久化）
+  const sendSlot = getTimeLabel();
+  console.log(`🔍 检查今天 ${sendSlot} 时段是否已发送...`);
+  if (await wasSlotSentTodayViaAPI(sendSlot)) {
+    console.log(`⏭️ 跳过此次发送`);
+    return;
+  }
+  console.log(`✅ 今天 ${sendSlot} 时段尚未发送，继续`);
+
   // 加载发送历史（30天不重复追踪）
   const sentHistory = loadSentHistory();
   cleanOldHistory(sentHistory);
-
-  // 检查是否今天这个时段已经发过（防重复触发）
-  const sendSlot = getTimeLabel();
-  if (wasSlotSentToday(sendSlot)) {
-    console.log(`⏭️ 今天 ${sendSlot} 时段已发送，跳过此次（如需强制重发请删除 data/last_send.json）`);
-    return;
-  }
-  markSlotSent(sendSlot);
 
   // 先尝试从 API 补充新鲜语录
   const apiQuotes = await fetchBatchFromAPIs(RECIPIENTS.length);
