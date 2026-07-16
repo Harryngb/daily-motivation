@@ -35,11 +35,6 @@
     "active": true
   },
   {
-    "name": "Carmen Zhang",
-    "email": "carmen.zhang@nvisionglobal.com",
-    "active": true
-  },
-  {
     "name": "Mia Chen",
     "email": "mia.chen@nvisionglobal.com",
     "active": true
@@ -47,6 +42,6 @@
   {
     "name": "FU SHEN",
     "email": "shenfu0124@163.com",
-    "active": true
+    "active": false
   }
 ]
