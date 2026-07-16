@@ -178,7 +178,7 @@ function getTimeLabel(): string {
 }
 
 // ===== 构建邮件HTML =====
-function buildHtml(content: string, author: string, name: string): string {
+function buildHtml(content: string, author: string, name: string, email: string): string {
   const label = getTimeLabel();
   const emoji = label === '08:00' ? '🌅' : '🌇';
   const greet = label === '08:00' ? 'Good Morning' : 'Good Evening';
@@ -223,6 +223,7 @@ body{font-family:Georgia,'Times New Roman','Songti SC','SimSun',serif;background
 <div class=footer>
 <p class=brand-name>nVision Global Family</p>
 <p class=tagline>&mdash; Together We Inspire &mdash;</p>
+<p class=unsubscribe style="margin-top:12px">If you no longer wish to receive these emails, you can <a href="https://falling-block-9a68.shenfu0124.workers.dev/unsubscribe?email=${encodeURIComponent(email)}" style="color:#d4a853;text-decoration:underline">unsubscribe here</a>.</p>
 <p class=unsubscribe>This email was sent by the Daily Inspiration system</p>
 </div>
 </div></div></body></html>`;
@@ -401,7 +402,7 @@ async function main() {
     console.log(`📧 ${r.name} (${r.email}) [${source}]:`);
     console.log(`    "${quote.content.substring(0, 50)}…" — ${quote.author}`);
 
-    const html = buildHtml(quote.content, quote.author, r.name);
+    const html = buildHtml(quote.content, quote.author, r.name, r.email);
     const ok = await sendEmail(r.name, r.email, html);
     results.push({ name: r.name, email: r.email, ok, quoteContent: quote.content, quoteAuthor: quote.author, quoteSource: source });
 
