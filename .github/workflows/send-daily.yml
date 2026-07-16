@@ -2,10 +2,10 @@ name: 📬 每日心语自动发送
 
 on:
   schedule:
-    - cron: '0 0 * * *'
-    - cron: '0 5 * * *'
-    - cron: '0 9 * * *'
+    - cron: '0 0,9 * * *'
   workflow_dispatch:
+  repository_dispatch:
+    types: [send-daily]
 
 jobs:
   send:
