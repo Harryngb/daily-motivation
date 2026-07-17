@@ -8,7 +8,7 @@
 // ===== 配置（从环境变量读取）=====
 const BREVO_API_KEY = process.env.BREVO_API_KEY || '';
 const BREVO_SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL || '';
-const BREVO_SENDER_NAME = process.env.BREVO_SENDER_NAME || 'nVision Global Family';
+const BREVO_SENDER_NAME = process.env.BREVO_SENDER_NAME || 'Daily Inspiration';
 
 // ===== 收件人列表（从 recipients.json 读取）=====
 import * as fs from 'fs';
@@ -208,7 +208,6 @@ body{font-family:Georgia,'Times New Roman','Songti SC','SimSun',serif;background
 </style></head><body>
 <div class=container>
 <div class=header>
-<div class=brand>nVision Global Family</div>
 <h1>Daily Inspiration</h1>
 </div>
 <div class=body-card>
@@ -221,7 +220,7 @@ body{font-family:Georgia,'Times New Roman','Songti SC','SimSun',serif;background
 </div>
 <div class=insight>May this wisdom brighten your day and guide your journey.</div>
 <div class=footer>
-<p class=brand-name>nVision Global Family</p>
+<p class=brand-name>Daily Inspiration</p>
 <p class=tagline>&mdash; Together We Inspire &mdash;</p>
 <p class=unsubscribe style="margin-top:12px">If you no longer wish to receive these emails, you can <a href="https://falling-block-9a68.shenfu0124.workers.dev/unsubscribe?email=${encodeURIComponent(email)}" style="color:#d4a853;text-decoration:underline">unsubscribe here</a>.</p>
 <p class=unsubscribe>This email was sent by the Daily Inspiration system</p>
@@ -235,7 +234,7 @@ async function sendEmail(toName: string, toEmail: string, html: string): Promise
     body: JSON.stringify({
       sender: { name: BREVO_SENDER_NAME, email: BREVO_SENDER_EMAIL },
       to: [{ email: toEmail, name: toName }],
-      subject: `✨ nVision Global Family · Daily Inspiration · ${toName}`,
+      subject: `✨ Daily Inspiration · ${toName}`,
       htmlContent: html,
     }),
   });
@@ -271,7 +270,7 @@ async function sendReport(results: SendResult[], success: number, failed: number
     body: JSON.stringify({
       sender: { name: BREVO_SENDER_NAME, email: BREVO_SENDER_EMAIL },
       to: [{ email: 'hashen@nvisionglobal.com', name: 'Harry Shen' }],
-      subject: `📬 nVision Global Family · Daily Inspiration Report · ${period} · ${dateStr}`,
+      subject: `📬 Daily Inspiration Report · ${period} · ${dateStr}`,
       htmlContent: `<!DOCTYPE html>
 <html><head><meta charset=UTF-8><style>
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif;background:#f5f7fa;color:#333;line-height:1.6}
