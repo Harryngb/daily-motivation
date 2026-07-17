@@ -198,7 +198,7 @@ body{font-family:Georgia,'Times New Roman','Songti SC','SimSun',serif;background
 .quote-wrapper{text-align:center;padding:8px 10px 16px;margin:0 0 24px}
 .quote-content{font-size:22px;line-height:1.7;color:#1a1a1a;margin-bottom:14px;font-style:italic;font-weight:400}
 .quote-author{font-size:14px;color:#888888;font-style:normal;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-.quote-author::before{content:'\2014\00a0'}
+
 .insight{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#999999;text-align:center;font-style:italic;padding:0 10px 20px;border-bottom:1px solid #eeeeee;margin-bottom:24px}
 .footer{text-align:center}
 .footer .tagline{font-family:Georgia,serif;font-size:15px;color:#d4a853;font-style:italic;margin-bottom:8px;letter-spacing:0.5px}
@@ -217,7 +217,7 @@ body{font-family:Georgia,'Times New Roman','Songti SC','SimSun',serif;background
 <div class=decorative-quotes>&ldquo;</div>
 <div class=quote-wrapper>
 <div class=quote-content>${escHtml(content)}</div>
-<div class=quote-author>${escHtml(author)}</div>
+<div class=quote-author>— ${escHtml(author)}</div>
 </div>
 <div class=insight>May this wisdom brighten your day and guide your journey.</div>
 <div class=footer>
