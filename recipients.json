@@ -12,7 +12,7 @@
   {
     "name": "Cathy Xue",
     "email": "cxue@nvisionglobal.com",
-    "active": false
+    "active": true
   },
   {
     "name": "Sandra Zheng",
@@ -27,7 +27,7 @@
   {
     "name": "Ada Hu",
     "email": "ahu@nvisionglobal.com",
-    "active": false
+    "active": true
   },
   {
     "name": "Bella Li",
