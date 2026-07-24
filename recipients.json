@@ -53,5 +53,10 @@
     "name": "Happiness Hang",
     "email": "happinesshang@qq.com",
     "active": false
+  },
+  {
+    "name": "Daphne Chen",
+    "email": "daphne.chen@nvisionglobal.com",
+    "active": true
   }
 ]
